@@ -1,0 +1,242 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_ANONYMOUS_ALLOCATORS
+RV NO_DELAY
+RV NO_FIXED_POINT
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_RELATIVE_DELAY
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK
+
+U remote_adagraph%b	remote_adagraph.adb	cab7e337 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W byte_sink%s		byte_sink.ads		byte_sink.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+W remote_adagraph%s	remote_adagraph.adb	remote_adagraph.ali
+W remote_adagraph.proxy%s  remote_adagraph-proxy.adb  remote_adagraph-proxy.ali
+W udp_sink%s		udp_sink.ads		udp_sink.ali
+
+U remote_adagraph%s	remote_adagraph.ads	820d720f EE NE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-calend.ads		20130417131018 d86d6c8c
+D a-caldel.ads		20130417131018 9f20b83d
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_sink.ads		20120416095037 943e6865
+D gnat.ads		20130417131026 fd2ad2f1
+D g-socket.ads		20130417131026 923c234a
+D interfac.ads		20130417131027 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D i-cstrea.ads		20130417131026 8128536b
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_packet.ads	20120404183756 096144be
+D osc_packet-message.ads  20120412124822 2014e080
+D osc_proxy.ads		20120416101857 b5f10c94
+D remote_adagraph.ads	20120410145525 10315145
+D remote_adagraph.adb	20120416201536 7f93d9ad
+D remote_adagraph-proxy.ads  20120416132709 6ae281d2
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-crtl.ads		20130417131029 dfcfca61
+D s-exctab.ads		20130417131029 66e51330
+D s-ficobl.ads		20130417131029 55a71d43
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-oscons.ads		20130603160047 d2b348ca
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+D udp_sink.ads		20120416095343 f19854f6
+X 1 ada.ads
+16K9*Ada 19e8 31|5r6 152r10
+X 14 a-textio.ads
+49K13*Text_IO 471e16 31|5w10 152r14
+231U14*Get_Immediate 31|152s22
+X 17 byte_sink.ads
+6K9*Byte_Sink 13e4 31|8w6 29r12
+8h9*Object
+9P9*Any(8R9) 31|29r22
+X 18 gnat.ads
+34K9*GNAT 37e9 30|7r6 7r24 31|6r6 11r5
+X 19 g-socket.ads
+58K14*Sockets 1262e17 30|7w11 7r29 31|6w11 11r10
+479I9*Port_Type<integer> 30|11r36 30r78 109r95 31|31r78 137r95
+524V13*Inet_Addr{488R9} 31|33s47
+X 30 remote_adagraph.ads
+9K9*Remote_Adagraph 115l5 115e20 31|7r6 13b14 166l5 166t20
+11i4*Default_Adagraph_Port{19|479I9} 30r91 31|31r91
+12a4*Default_Host{string} 30r49 31|31r49
+18E9*Color_Type 20e76 73r37 76r64 77r64 78r64 79r64 80r71 90r49 31|62r37
+. 74r61 80r60 86r64 92r61 98r71 119r49
+18n24*Black{18E9} 73r51 31|62r51
+18n31*Blue{18E9}
+18n37*Green{18E9}
+18n44*Cyan{18E9}
+18n50*Red{18E9}
+18n55*Magenta{18E9}
+18n64*Brown{18E9}
+19n24*Light_Gray{18E9}
+19n36*Dark_Gray{18E9}
+19n47*Light_Blue{18E9}
+19n59*Light_Green{18E9}
+20n24*Light_Cyan{18E9}
+20n36*Light_Red{18E9}
+20n47*Light_Magenta{18E9}
+20n62*Yellow{18E9}
+20n70*White{18E9} 76r78 77r78 78r78 79r78 80r85 90r63 31|74r75 80r74 86r78
+. 92r75 98r85 119r63
+22E9*Fill_Type 22e37 77r96 78r96 79r96 31|80r92 86r96 92r93
+22n23*Fill{22E9} 31|83r55 89r59 95r56
+22n29*No_Fill{22E9} 77r110 78r110 79r110 31|80r106 86r110 92r107
+30U14*Define_Server 30>29 30>63 31|31b14 35t7 39s31
+30s29 Hostname{string} 31|31b29 33r57
+30i63 Adagraph_Port{19|479I9} 31|31b63 33r76
+38U14*Create_Graph_Window 38<35 38<42 38<62 38<70 31|42b14 45t7
+38i35 X_Max{integer} 31|42b35 44m64
+38i42 Y_Max{integer} 31|42b42 44m71
+38i62 X_Char{integer} 31|42b62 44m78
+38i70 Y_Char{integer} 31|42b70 44m86
+42U14*Create_Sized_Graph_Window 42>41 42>49 42<69 42<77 43<41 43<49 31|44s7
+. 47b14 54t8
+42i41 X_Size{integer} 31|47b41 50r17
+42i49 Y_Size{integer} 31|47b49 50r36
+42i69 X_Max{integer} 31|47b69 50m7 53r36
+42i77 Y_Max{integer} 31|47b77 50m26 53r43
+43i41 X_Char{integer} 31|48b41 51m7
+43i49 Y_Char{integer} 31|48b49 51m34
+47U14*Destroy_Graph_Window 31|56b14 60l8 60t28
+51U14*Set_Window_Title 51>32 31|68b14 72t7
+51s32 Title{string} 31|68b32 71r33
+59V13*Key_Hit{boolean} 31|149b13 155t7 160s17
+63V13*Get_Key{character} 31|157b13 164t7
+73U14*Clear_Window 73>28 31|62b14 66t7
+73e28 Hue{18E9} 31|62b28 65r29
+76U14*Draw_Line 76>28 76>32 76>36 76>40 76>56 31|74b14 78t7 121s7
+76i28 X1{integer} 31|74b25 77r26
+76i32 Y1{integer} 31|74b29 77r30
+76i36 X2{integer} 31|74b33 77r34
+76i40 Y2{integer} 31|74b37 77r38
+76e56 Hue{18E9} 31|74b53 77r42
+77U14*Draw_Box 77>28 77>32 77>36 77>40 77>56 77>85 31|80b14 84t7
+77i28 X1{integer} 31|80b24 83r25
+77i32 Y1{integer} 31|80b28 83r29
+77i36 X2{integer} 31|80b32 83r33
+77i40 Y2{integer} 31|80b36 83r37
+77e56 Hue{18E9} 31|80b52 83r41
+77e85 Filled{22E9} 31|80b81 83r46
+78U14*Draw_Circle 78>28 78>31 78>34 78>56 78>85 31|92b14 96t7
+78i28 X{integer} 31|92b27 95r28
+78i31 Y{integer} 31|92b30 95r31
+78i34 Radius{integer} 31|92b33 95r34
+78e56 Hue{18E9} 31|92b53 95r42
+78e85 Filled{22E9} 31|92b82 95r47
+79U14*Draw_Ellipse 79>28 79>32 79>36 79>40 79>56 79>85 31|86b14 90t7
+79i28 X1{integer} 31|86b28 89r29
+79i32 Y1{integer} 31|86b32 89r33
+79i36 X2{integer} 31|86b36 89r37
+79i40 Y2{integer} 31|86b40 89r41
+79e56 Hue{18E9} 31|86b56 89r45
+79e85 Filled{22E9} 31|86b85 89r50
+80U14*Display_Text 80>28 80>31 80>46 80>63 31|98b14 102t7
+80i28 X{integer} 31|98b28 101r29
+80i31 Y{integer} 31|98b31 101r32
+80s46 Text{string} 31|98b46 101r35
+80e63 Hue{18E9} 31|98b63 101r41
+87V14*Where_X{integer} 31|104b13 107t7
+88V14*Where_Y{integer} 31|109b13 112t7
+89U14*Goto_XY 89>23 89>26 31|114b14 117t7 122s7
+89i23 X{integer} 31|114b23 116r19
+89i26 Y{integer} 31|114b26 116r34
+90U14*Draw_To 90>23 90>26 90>41 31|119b14 123t7
+90i23 X{integer} 31|119b23 121r37 122r15
+90i26 Y{integer} 31|119b26 121r40 122r18
+90e41 Hue{18E9} 31|119b41 121r43
+98U14*Set_Antialiasing 98>31 31|125b14 129t7
+98b31 On{boolean} 31|125b32 128r33
+104U14*Set_Immediate_Rendering 104>38 31|131b14 135t7
+104b38 On{boolean} 31|131b38 134r40
+109U14*Create_Control_Surface 109>37 109>60 109>82 31|137b14 141t7
+109s37 Class_Name{string} 31|137b37 140r39
+109s60 Host_Name{string} 31|137b60 140r51
+109i82 OSC_Port{19|479I9} 31|137b82 140r62
+113U14*Destroy_Control_Surface 31|143b14 147t7
+X 31 remote_adagraph.adb
+15i4 Default_Width{integer} 44r33
+16i4 Default_Height{integer} 44r48
+17i4 Character_Width{integer} 51r17
+18i4 Character_Height{integer} 51r44
+20a4 Target_Object_Name{string}
+22p4 My_Proxy(32|15R9) 34m7 39r10 53r7 59r7 65r7 71r7 77r7 83r7 89r7 95r7
+. 101r7 128r7 134r7 140r7 146r7
+24i4 Turtle_X{integer} 106r14 116m7 121r17
+24i14 Turtle_Y{integer} 111r14 116m22 121r27
+26e4 Input{character} 152m36 161r17
+27b4 Input_Available{boolean} 151r14 152m43 154r14 162m7
+29p4 Outlet{17|9P9} 33m7 34r62
+37U14 Ensure_Proxy_Defined 37b14 40t7 52s7 58s7 64s7 70s7 76s7 82s7 88s7
+. 94s7 100s7 127s7 133s7 139s7 145s7
+158e7 result{character} 161m7 163r14
+X 32 remote_adagraph-proxy.ads
+13K25*Proxy 31|7w22 22r21 34r23 34r37 32|57e4
+15R9*Object<29|10R9> 31|22r27 34r29 32|55e14
+17V14*Value{15R9} 31|34s43
+19U14*Create_Graph_Window 31|53s16
+20U14*Destroy_Graph_Window 31|59s16
+21U14*Clear_Window 31|65s16
+22U14*Set_Window_Title 31|71s16
+23U14*Draw_Line 31|77s16
+24U14*Draw_Box 31|83s16
+25U14*Draw_Circle 31|95s16
+26U14*Draw_Ellipse 31|89s16
+27U14*Display_Text 31|101s16
+28U14*Set_Antialiasing 31|128s16
+29U14*Set_Immediate_Rendering 31|134s16
+30U14*Create_Control_Surface 31|140s16
+32U14*Destroy_Control_Surface 31|146s16
+X 56 udp_sink.ads
+8K9*UDP_Sink 31|9w6 33r17 56|27e4
+15V13*Value{17|9P9} 31|33s26
+15r19 Target_Host{19|488R9} 31|33r32
+16i19 Port{19|479I9} 31|33r68
+

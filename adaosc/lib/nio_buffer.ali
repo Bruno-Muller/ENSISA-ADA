@@ -1,0 +1,87 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U nio_buffer%b		nio_buffer.adb		cfe68087 NE OO PK
+
+U nio_buffer%s		nio_buffer.ads		b4e7e002 EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-except.ads		20130417131019 10fcae55
+D a-stream.ads		20130417131021 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer.adb	20120416093009 7b016085
+D system.ads		20130417131036 f2f2d889
+D s-exctab.ads		20130417131029 66e51330
+D s-parame.ads		20130417131032 b6e20cc0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 6 nio_buffer.ads
+5K9*Nio_Buffer 37l5 37e15 7|1b14 81l5 81t15
+7H9*Object 7d17 9p13 9r30 10p13 10r27 11p13 11r30 13p13 13r31 14p13 14r35
+. 16p14 16r35 17p14 17r32 19p14 19r32 20p14 20r31 21p14 21r31 22p14 22r32
+. 23p14 23r33 31c9 35e14 7|3r28 8r25 13r28 18r29 23r33 28r33 39r30 50r30
+. 56r30 62r29 67r30 75r31
+7i17 Capacity{natural} 31r17 32r30 7|5r16 41r24 52r20
+9V13*Capacity{positive} 9>23 7|3b13 6t7
+9r23 B{7R9} 7|3b22 5r14
+10V13*Limit{positive} 10>20 7|8b13 11t7
+10r20 B{7R9} 7|8b19 10r14
+11V13*Position{positive} 11>23 7|13b13 16t7
+11r23 B{7R9} 7|13b22 15r14
+13V13*Remaining{natural} 13>24 7|18b13 21t7 25s16
+13r24 B{7R9} 7|18b23 20r14 20r24
+14V13*Has_Remaining{boolean} 14>28 7|23b13 26t7
+14r28 B{7R9} 7|23b27 25r14
+16U14*Position 16=24 16>43 7|28b14 37t7
+16r24 B{7R9} 7|28b23 30r25 33r26 34m10 36m7
+16i43 New_Position{positive} 7|28b41 30r10 33r10 36r21
+17U14*Limit 17=21 17>40 7|39b14 48t7
+17r21 B{7R9} 7|39b20 41r22 44r22 45m10 47m7
+17i40 New_Limit{positive} 7|39b38 41r10 44r10 47r18
+19U14*Clear 19=21 7|50b14 54t7
+19r21 B{7R9} 7|50b20 52m7 52r18 53m7 53r7
+20U14*Flip 20=20 7|56b14 60t7
+20r20 B{7R9} 7|56b20 58m7 58r18 59m7 59r7
+21U14*Mark 21=20 7|62b14 65t7
+21r20 B{7R9} 7|62b19 64m7 64r17
+22U14*Reset 22=21 7|67b14 73t7
+22r21 B{7R9} 7|67b20 69r10 72m7 72r21
+23U14*Rewind 23=22 7|53s9 59s9 75b14 79t7
+23r22 B{7R9} 7|75b21 77m7 78m7
+25X4*Underflow
+25X15*Overflow
+29N4 Not_Marked 34r30 7|34r20 45r20 69r19 78r21
+32i7*Limit{positive} 7|10r16 20r16 30r27 47m9 52m9 58m9
+33i7*Position{positive} 7|15r16 20r26 36m9 58r20 64r19 72m9 77m9
+34i7*Mark{natural} 7|33r28 34m12 44r24 45m12 64m9 69r12 72r23 78m9
+

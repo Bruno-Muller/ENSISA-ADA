@@ -1,0 +1,101 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U midi.implementation%b	midi-implementation.adb	178e492f NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W midi%s		midi.ads		midi.ali
+W system.aux_dec%s	s-auxdec.adb		s-auxdec.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.concat_6%s	s-conca6.adb		s-conca6.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U midi.implementation%s	midi-implementation.ads	a5ecaa87 EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W midi%s		midi.ads		midi.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131021 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131027 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D midi.ads		20120404152431 af2188bb
+D midi-implementation.ads  20120404151756 a5ecaa87
+D midi-implementation.adb  20120403091746 8a0f167c
+D system.ads		20130417131036 f2f2d889
+D s-auxdec.ads		20130417131028 8f67873f
+D s-auxdec.adb		20130417131028 2ff6d5fb
+D s-conca2.ads		20130417131029 fbd0f2fc
+D s-conca4.ads		20130417131029 025fe3be
+D s-conca6.ads		20130417131029 c7caf514
+D s-crtl.ads		20130417131029 dfcfca61
+D s-exctab.ads		20130417131029 66e51330
+D s-ficobl.ads		20130417131029 55a71d43
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-imgint.ads		20130417131030 02dbe0c2
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 13|3r6 4r6
+X 7 a-textio.ads
+49K13*Text_IO 471e16 13|3w10 4r10
+263U14*Put_Line 13|12s7 18s7 24s7
+X 11 midi.ads
+3K9*Midi 13e4 12|3w6 7r23
+5h12*Object 12|7r28
+X 12 midi-implementation.ads
+5K14*Implementation 11|3k9 12|13e4 13|6b19 28t4
+7R9*Object<11|5R12> 7e51 9P14 9r41 10P14 10r41 11P14 11r41 13|10r35 16r32
+. 22r41
+9U14*Note_On<11|9p14> 9=28 9>49 9>58 9>63 13|10b14 13t7
+9r28 Self{7R9} 13|10b22
+9i49 Channel{natural} 13|10b43 12r36
+9i58 Key{natural} 13|10b52 12r60
+9i63 Velocity{natural} 13|10b57 12r80
+10U14*Bend<11|10p14> 10=28 10>49 10>67 13|16b14 19t7
+10r28 Self{7R9} 13|16b19
+10i49 Channel{natural} 13|16b40 18r33
+10i67 Value{integer} 13|16b58 18r57
+11U14*All_Notes_Off<11|11p14> 11=28 11>49 13|22b14 25t7
+11r28 Self{7R9} 13|22b28
+11i49 Channel{natural} 13|22b49 24r42
+X 13 midi-implementation.adb
+8V13 Image{string} 8b13 8>19 12s30 12s54 12s74 18s27 18s51 24s36
+8i19 I{integer}
+

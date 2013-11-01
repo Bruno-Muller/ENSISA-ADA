@@ -1,0 +1,108 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_FLOATING_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U osc_argument%b	osc_argument.adb	d02407d7 NE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U osc_argument%s	osc_argument.ads	25f15b3b EE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131027 cb4a8015
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_argument.adb	20100426134126 ca448829
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-imgint.ads		20130417131030 02dbe0c2
+D s-imgrea.ads		20130417131030 c7a851e2
+D s-parame.ads		20130417131032 b6e20cc0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 1 ada.ads
+16K9*Ada 19e8 13|3r6 34r40 14|59r14
+X 7 a-string.ads
+16K13*Strings 35e16 13|3r10 34r44 14|59r18
+X 9 a-strunb.ads
+76K21*Unbounded 489e26 13|3w18 34r52 14|59r26
+86P9*String_Access(string) 13|34r62
+88U14*Free 14|59s36
+X 13 osc_argument.ads
+5K9*OSC_Argument 40e4 14|3b14 64t4
+7E9*Object_Kind 7e59 8r23 29r23
+7n25*Undefined{7E9} 8r38 29r38 31r12 14|49r19
+7n36*Integer{7E9} 32r12 14|12r22 50r19
+7n45*Float{7E9} 33r12 14|18r22 51r19
+7n52*String{7E9} 34r12 14|24r22 52r23 58r19
+8R9*Object 8d17 10r51 14r56 15r56 16r56 17r56 19r25 20r25 21r25 23r25 25r29
+. 29c9 36e14 14|5r36 7r17 10r47 12r14 16r45 18r14 22r46 24r14 28r25 34r25
+. 40r25 46r22 56r29
+8e17 Kind{7E9} 29r17 30r12 14|48r14 58r12
+10A9*Arguments(8R9)<integer> 12r27 38r27
+12a4*No_Arguments{10A9} 38c4
+14V13*Undefined_Value{8R9} 14|5b13 8t7 61s16
+15V13*Value{8R9} 15>19 14|10b13 13t7
+15i19 I{integer} 14|10b19 12r31
+16V13*Value{8R9} 16>19 14|16b13 19t7
+16f19 F{float} 14|16b19 18r29
+17V13*Value{8R9} 17>19 14|22b13 25t7
+17s19 S{string} 14|22b19 24r51
+19V13*Value{integer} 19>19 14|28b13 31t7
+19r19 O{8R9} 14|28b19 30r14
+20V13*Value{float} 20>19 14|34b13 37t7
+20r19 O{8R9} 14|34b19 36r14
+21V13*Value{string} 21>19 14|40b13 43t7
+21r19 O{8R9} 14|40b19 42r14
+23V13*Image{string} 23>19 14|46b13 54t7
+23r19 O{8R9} 14|46b19 48r12 50r62 51r62 52r43
+25U14*Free 25=19 14|56b14 62t7
+25r19 O{8R9} 14|56b19 58r10 59m41 59r41 61m11
+32i25*Integer_Value{integer} 14|30r16 50r64
+33f25*Float_Value{float} 14|36r16 51r64
+34p25*String_Ref{9|86P9} 14|42r16 52r45 59m43
+X 14 osc_argument.adb
+7r14 R{13|8R9}
+

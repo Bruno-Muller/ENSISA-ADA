@@ -1,0 +1,121 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK
+
+U osc_sender%b		osc_sender.adb		0a63f271 NE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W nio_buffer.byte_buffer%s  nio_buffer-byte_buffer.adb  nio_buffer-byte_buffer.ali
+W osc_packet%s		osc_packet.ads		osc_packet.ali
+W osc_packet.message%s	osc_packet-message.adb	osc_packet-message.ali
+W osc_packet_unparser%s	osc_packet_unparser.adb	osc_packet_unparser.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U osc_sender%s		osc_sender.ads		97ea889e EE NE OO PK
+W byte_sink%s		byte_sink.ads		byte_sink.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+W osc_argument%s	osc_argument.adb	osc_argument.ali
+W osc_packet%s		osc_packet.ads		osc_packet.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_sink.ads		20120416095037 943e6865
+D gnat.ads		20130417131026 fd2ad2f1
+D g-socket.ads		20130417131026 923c234a
+D interfac.ads		20130417131027 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_packet.ads	20120404183756 096144be
+D osc_packet-message.ads  20120412124822 2014e080
+D osc_packet_unparser.ads  20120416123730 6356bafc
+D osc_sender.ads	20120416100546 82e908f1
+D osc_sender.adb	20120416124013 4663c9d7
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-oscons.ads		20130603160047 d2b348ca
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 13 byte_sink.ads
+6K9*Byte_Sink 13e4 25|5w6 14r34 18r34 20r66 26|12r65 18r51 25r34
+8h9*Object
+9P9*Any(8R9) 25|14r44 18r44 20r76 26|12r75 18r61 25r44
+11x14*Send 26|15R12
+X 14 gnat.ads
+34K9*GNAT 37e9 25|4r6
+X 15 g-socket.ads
+58K14*Sockets 1262e17 25|4w11
+X 18 nio_buffer.ads
+5K9*Nio_Buffer 37e15 26|4r6 8r6
+X 19 nio_buffer-byte_buffer.ads
+8K20*Byte_Buffer 46e4 26|4w17 13r15
+14R9*Object<18|7R9> 44e14 26|13r27
+X 20 osc_argument.ads
+5K9*OSC_Argument 40e4 25|7w6 9r5 17r34 17r60 26|20r22 24r34 24r60
+10A9*Arguments(8R9)<integer> 25|17r47 26|24r47
+12a4*No_Arguments{10A9} 25|17r73 26|20r35 24r73
+X 22 osc_packet.ads
+7K9*OSC_Packet 19e4 25|6w6 20r32 26|6r6 8r18 12r31
+9H12*Object 9e49 25|20r43 26|12r42
+X 23 osc_packet-message.ads
+8K20*Message 31e4 26|6w17 26r10
+10R9*Object<22|9R12> 29e14 26|26r18
+20U14*Set_Selector 26|28s9
+22U14*Set_Arguments 26|29s9
+X 24 osc_packet_unparser.ads
+8K9*OSC_Packet_Unparser 14e4 26|3w6 13r37
+10V13*Unparse{19|14R9} 26|13s57
+X 25 osc_sender.ads
+11K9*OSC_Sender 22e4 26|10b14 33t4
+13U14*Send 13>20 14>20 26|18b14 21t7
+13s20 Selector{string} 26|18b20 20r12
+14p20 Sink{13|9P9} 26|18b42 20r49
+16U14*Send 16>20 17>20 18>20 26|20s7 23b14 31t7
+16s20 Selector{string} 26|23b20 28r22
+17a20 Arguments{20|10A9} 26|24b20 26r44 29r23
+18p20 Sink{13|9P9} 26|25b20 30r15
+20U14*Send 20>20 20>57 26|12b14 16t7 30s7
+20c20 Packet<22|9R12> 26|12b20 13r65
+20p57 Sink{13|9P9} 26|12b56 15r7
+X 26 osc_sender.adb
+13r7 Buffer{19|14R9} 15r17
+26r7 M{23|10R9} 28m7 28r7 29m7 29r7 30r12
+

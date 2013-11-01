@@ -1,0 +1,276 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_CALENDAR
+RV NO_DELAY
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_FIXED_POINT
+RV NO_LOCAL_ALLOCATORS
+RV NO_RELATIVE_DELAY
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U remote_adagraph.proxy%b  remote_adagraph-proxy.adb  3ef77271 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W osc_argument%s	osc_argument.ads	osc_argument.ali
+W remote_adagraph%s	remote_adagraph.adb	remote_adagraph.ali
+W remote_adagraph.selectors%s  remote_adagraph-selectors.ads  remote_adagraph-selectors.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+
+U remote_adagraph.proxy%s  remote_adagraph-proxy.ads  21684a65 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.calendar%s	a-calend.adb		a-calend.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W byte_sink%s		byte_sink.ads		byte_sink.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+W osc_packet%s		osc_packet.ads		osc_packet.ali
+W osc_packet.message%s	osc_packet-message.ads	osc_packet-message.ali
+W osc_proxy%s		osc_proxy.ads		osc_proxy.ali
+W remote_adagraph%s	remote_adagraph.adb	remote_adagraph.ali
+W system%s		system.ads		system.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-calend.ads		20130417131018 d86d6c8c
+D a-caldel.ads		20130417131018 9f20b83d
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_sink.ads		20120416095037 943e6865
+D gnat.ads		20130417131026 fd2ad2f1
+D g-socket.ads		20130417131026 923c234a
+D interfac.ads		20130417131027 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_packet.ads	20120404183756 096144be
+D osc_packet-message.ads  20120412124822 2014e080
+D osc_proxy.ads		20120416101857 b5f10c94
+D remote_adagraph.ads	20120410145525 10315145
+D remote_adagraph-proxy.ads  20120416132709 6ae281d2
+D remote_adagraph-proxy.adb  20120416132816 138434ce
+D remote_adagraph-selectors.ads  20120404141727 859c241f
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-oscons.ads		20130603160047 d2b348ca
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 1 ada.ads
+16K9*Ada 19e8 28|3r6 11r5 40r32 41r32 29|5r6 9r5 62r18
+X 2 a-calend.ads
+36K13*Calendar 375e17 28|3w10 11r9 40r36 41r36 29|5w10 9r9 62r22
+38I9*Time 28|40r45 41r45 29|62r31
+52V13*Clock{38I9} 28|40s53 41s53 29|28s37 29s39 48s11 52s35 57s35 66s20
+94V14*"+"{38I9} 29|68s43
+97V14*"-"{duration} 29|48s17
+X 15 byte_sink.ads
+6K9*Byte_Sink 13e4 28|7w6 17r47 29|22r47
+8h9*Object
+9P9*Any(8R9) 28|17r57 29|22r57
+X 16 gnat.ads
+34K9*GNAT 37e9 28|4r6 11r19
+X 17 g-socket.ads
+58K14*Sockets 1262e17 28|4w11 11r24
+479I9*Port_Type<integer> 28|31r74 29|160r74
+X 22 osc_argument.ads
+5K9*OSC_Argument 40e4 29|6w6 74r48 75r48 86r41 92r45 98r38 99r38 100r38 101r38
+. 102r38 108r37 109r37 110r37 111r37 112r37 113r37 119r40 120r40 121r40 122r40
+. 123r40 129r41 130r41 131r41 132r41 133r41 134r41 140r41 141r41 142r41 143r41
+. 149r45 155r52 162r51 163r51 164r51
+15V13*Value{8R9} 29|74s61 75s61 86s54 98s51 99s51 100s51 101s51 102s51 108s50
+. 109s50 110s50 111s50 112s50 113s50 119s53 120s53 121s53 122s53 123s53 129s54
+. 130s54 131s54 132s54 133s54 134s54 140s54 141s54 143s54 149s58 155s65 164s64
+17V13*Value{8R9} 29|92s58 142s54 162s64 163s64
+X 24 osc_packet.ads
+7K9*OSC_Packet 19e4 28|9r6 11r50 34r63 29|61r52
+9H12*Object 9e49 28|34r74 29|61r63
+X 25 osc_packet-message.ads
+8K20*Message 31e4 28|9w17 42r32 43r32 44r32 45r32 46r32 47r32 48r32 49r32
+. 50r32 51r32 52r32 53r32 54r32
+10R9*Object<24|9R12> 29e14 28|42r40 43r40 44r40 45r40 46r40 47r40 48r40 49r40
+. 50r40 51r40 52r40 53r40 54r40
+20U14*Set_Selector 29|30s37 31s38 32s30 33s34 34s27 35s26 36s29 37s30 38s30
+. 39s34 40s41 41s40 42s41
+21U14*Set_Argument 29|74s32 75s32 86s25 92s29 98s22 99s22 100s22 101s22 102s22
+. 108s21 109s21 110s21 111s21 112s21 113s21 119s24 120s24 121s24 122s24 123s24
+. 129s25 130s25 131s25 132s25 133s25 134s25 140s25 141s25 142s25 143s25 149s29
+. 155s36 162s35 163s35 164s35
+X 26 osc_proxy.ads
+8K9*OSC_Proxy 24e4 28|8w6 15r31 38r31 29|23r11 65r7
+10R9*Object 22e14 28|15r41 38r41 29|65r17
+12U14*Initialize 29|26s17
+13U14*Send 29|65s30
+15V13*Selector{string} 29|30s55 31s55 32s55 33s55 34s55 35s55 36s55 37s55
+. 38s55 39s55 40s55 41s55 42s55
+X 27 remote_adagraph.ads
+9K9*Remote_Adagraph 115e20 28|6w6 11r33 29|7r6
+18E9*Color_Type 20e76 28|21r68 23r96 24r96 25r96 26r96 27r104 29|84r57 86r60
+. 96r82 102r57 106r81 112r56 117r84 122r59 127r85 133r60 138r93 143r60
+X 28 remote_adagraph-proxy.ads
+13K25*Proxy 27|9k9 28|57e4 29|11b30 173t4
+15R9*Object<26|10R9> 26|12p14 28|17p14 17r69 19p14 19r52 20p14 20r52 21p14
+. 21r52 22p14 22r52 23p14 23r52 24p14 24r52 25p14 25r52 26p14 26r52 27p14
+. 27r52 28p14 28r52 29p14 29r52 30p14 30r52 32p14 32r52 34P25 34r44 38c9
+. 55e14 29|22r69 25r22 46r45 61r33 72r48 79r49 84r41 90r45 96r38 106r37 117r40
+. 127r41 138r41 147r45 153r52 159r52 168r53
+17V14*Value{15R9} 17>20 17>41 29|22b13 44t8
+17s20 Target_Name{string} 29|22b20 26r28 30r64 31r64 32r64 33r64 34r64 35r64
+. 36r64 37r64 38r64 39r64 40r64 41r64 42r64
+17p41 Sink{15|9P9} 29|22b41 26r41
+19U14*Create_Graph_Window 19=39 19>60 19>67 29|72b14 77t7
+19r39 Self{15R9} 29|72b35 74m7 74r7 75m7 75r7 76m7 76r7 76r17
+19i60 Width{integer} 29|72b56 74r67
+19i67 Height{integer} 29|72b63 75r67
+20U14*Destroy_Graph_Window 20=39 29|79b14 82t7
+20r39 Self{15R9} 29|79b36 81m7 81r7 81r17
+21U14*Clear_Window 21=39 21>60 29|84b14 88t7
+21r39 Self{15R9} 29|84b28 86m7 86r7 87m7 87r7 87r17
+21e60 Hue{27|18E9} 29|84b49 86r75
+22U14*Set_Window_Title 22=39 22>60 29|90b14 94t7
+22r39 Self{15R9} 29|90b32 92m7 92r7 93m7 93r7 93r17
+22s60 Title{string} 29|90b53 92r64
+23U14*Draw_Line 23=39 23>60 23>64 23>68 23>72 23>88 29|96b14 104t7
+23r39 Self{15R9} 29|96b25 98m7 98r7 99m7 99r7 100m7 100r7 101m7 101r7 102m7
+. 102r7 103m7 103r7 103r17
+23i60 X1{integer} 29|96b46 98r57
+23i64 Y1{integer} 29|96b50 99r57
+23i68 X2{integer} 29|96b54 100r57
+23i72 Y2{integer} 29|96b58 101r57
+23e88 Hue{27|18E9} 29|96b74 102r72
+24U14*Draw_Box 24=39 24>60 24>64 24>68 24>72 24>88 24>108 29|106b14 115t7
+24r39 Self{15R9} 29|106b24 108m7 108r7 109m7 109r7 110m7 110r7 111m7 111r7
+. 112m7 112r7 113m7 113r7 114m7 114r7 114r17
+24i60 X1{integer} 29|106b45 108r56
+24i64 Y1{integer} 29|106b49 109r56
+24i68 X2{integer} 29|106b53 110r56
+24i72 Y2{integer} 29|106b57 111r56
+24e88 Hue{27|18E9} 29|106b73 112r71
+24b108 Filled{boolean} 29|106b93 113r68
+25U14*Draw_Circle 25=39 25>61 25>65 25>68 25>88 25>108 29|117b14 125t7
+25r39 Self{15R9} 29|117b27 119m7 119r7 120m7 120r7 121m7 121r7 122m7 122r7
+. 123m7 123r7 124m7 124r7 124r17
+25i61 X{integer} 29|117b49 119r59
+25i65 Y{integer} 29|117b53 120r59
+25i68 Radius{integer} 29|117b56 121r59
+25e88 Hue{27|18E9} 29|117b76 122r74
+25b108 Filled{boolean} 29|117b96 123r71
+26U14*Draw_Ellipse 26=39 26>60 26>64 26>68 26>72 26>88 26>108 29|127b14 136t7
+26r39 Self{15R9} 29|127b28 129m7 129r7 130m7 130r7 131m7 131r7 132m7 132r7
+. 133m7 133r7 134m7 134r7 135m7 135r7 135r17
+26i60 X1{integer} 29|127b49 129r60
+26i64 Y1{integer} 29|127b53 130r60
+26i68 X2{integer} 29|127b57 131r60
+26i72 Y2{integer} 29|127b61 132r60
+26e88 Hue{27|18E9} 29|127b77 133r75
+26b108 Filled{boolean} 29|127b97 134r72
+27U14*Display_Text 27=39 27>61 27>64 27>79 27>96 29|138b14 145t7
+27r39 Self{15R9} 29|138b28 140m7 140r7 141m7 141r7 142m7 142r7 143m7 143r7
+. 144m7 144r7 144r17
+27i61 X{integer} 29|138b50 140r60
+27i64 Y{integer} 29|138b53 141r60
+27s79 Text{string} 29|138b68 142r60
+27e96 Hue{27|18E9} 29|138b85 143r75
+28U14*Set_Antialiasing 28=39 28>60 29|147b14 151t7
+28r39 Self{15R9} 29|147b32 149m7 149r7 150m7 150r7 150r17
+28b60 On{boolean} 29|147b53 149r76
+29U14*Set_Immediate_Rendering 29=39 29>60 29|153b14 157t7
+29r39 Self{15R9} 29|153b39 155m7 155r7 156m7 156r7 156r17
+29b60 On{boolean} 29|153b60 155r83
+30U14*Create_Control_Surface 30=39 30>60 31>39 31>61 29|159b14 166t7
+30r39 Self{15R9} 29|159b39 162m7 162r7 163m7 163r7 164m7 164r7 165m7 165r7
+. 165r17
+30s60 Class_Name{string} 29|159b60 162r70
+31s39 Host_Name{string} 29|160b39 163r70
+31i61 OSC_Port{17|479I9} 29|160b61 164r78
+32U14*Destroy_Control_Surface 32=39 29|168b14 171t7
+32r39 Self{15R9} 29|168b40 170m7 170r7 170r17
+34U25*Send<26|13p14> 34=31 34>52 29|61b14 70t8 76s12 81s12 87s12 93s12 103s12
+. 114s12 124s12 135s12 144s12 150s12 156s12 165s12 170s12
+34r31 Self{15R9} 29|61b20 64m25 65m24 65r24 68r19 69m7
+34c52 Packet<24|9R12> 29|61b41 65r35
+39i7 Burst_Length{integer} 29|27m17 49m15 49r36 51m15 54r15 56m15
+40i7 Burst_Start_Time{2|38I9} 29|28m17 48r24 52m15 57m15
+41i7 Previous_Send_Time{2|38I9} 29|29m17 68r24 69m12
+42r7 Create_Graph_Window{25|10R9} 29|30m17 74m12 75m12 76r22
+43r7 Destroy_Graph_Window{25|10R9} 29|31m17 81r22
+44r7 Clear_Window{25|10R9} 29|32m17 86m12 87r22
+45r7 Set_Window_Title{25|10R9} 29|33m17 92m12 93r22
+46r7 Draw_Line{25|10R9} 29|34m17 98m12 99m12 100m12 101m12 102m12 103r22
+47r7 Draw_Box{25|10R9} 29|35m17 108m12 109m12 110m12 111m12 112m12 113m12
+. 114r22
+48r7 Draw_Circle{25|10R9} 29|36m17 119m12 120m12 121m12 122m12 123m12 124r22
+49r7 Draw_Ellipse{25|10R9} 29|37m17 129m12 130m12 131m12 132m12 133m12 134m12
+. 135r22
+50r7 Display_Text{25|10R9} 29|38m17 140m12 141m12 142m12 143m12 144r22
+51r7 Set_Antialiasing{25|10R9} 29|39m17 149m12 150r22
+52r7 Set_Immediate_Rendering{25|10R9} 29|40m17 155m12 156r22
+53r7 Create_Control_Surface{25|10R9} 29|41m17 162m12 163m12 164m12 165r22
+54r7 Destroy_Control_Surface{25|10R9} 29|42m17 170r22
+X 29 remote_adagraph-proxy.adb
+17N4 Max_Burst_Length 54r31
+18N4 Min_Burst_Duration 48r44
+19N4 Relaxation_Duration 55r16
+20N4 Send_Delay 68r45
+25r14 Result{28|15R9} 26m10 26r10 27m10 28m10 29m10 30m10 30r10 31m10 31r10
+. 32m10 32r10 33m10 33r10 34m10 34r10 35m10 35r10 36m10 36r10 37m10 37r10
+. 38m10 38r10 39m10 39r10 40m10 40r10 41m10 41r10 42m10 42r10
+46U14 Regulate_Emission 46b14 46=32 59t8 64s7
+46r32 Self{28|15R9} 48r19 49m10 49r31 51m10 52m10 54r10 56m10 57m10
+62i7 Send_Time{2|38I9} 66m7 69r34
+X 30 remote_adagraph-selectors.ads
+3K25*Selectors 29|7w22 30r77 31r77 32r77 33r77 34r77 35r77 36r77 37r77 38r77
+. 39r77 40r77 41r77 42r77 30|17e4
+4a4*Create_Graph_Window{string} 29|30r87
+5a4*Destroy_Graph_Window{string} 29|31r87
+6a4*Clear_Window{string} 29|32r87
+7a4*Set_Window_Title{string} 29|33r87
+8a4*Draw_Line{string} 29|34r87
+9a4*Draw_Box{string} 29|35r87
+10a4*Draw_Circle{string} 29|36r87
+11a4*Draw_Ellipse{string} 29|37r87
+12a4*Display_Text{string} 29|38r87
+13a4*Set_Antialiasing{string} 29|39r87
+14a4*Set_Immediate_Rendering{string} 29|40r87
+15a4*Create_Control_Surface{string} 29|41r87
+16a4*Destroy_Control_Surface{string} 29|42r87
+

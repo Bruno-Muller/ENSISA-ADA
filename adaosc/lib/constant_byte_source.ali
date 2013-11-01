@@ -1,0 +1,89 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U constant_byte_source%b  constant_byte_source.adb  44bf5c24 NE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U constant_byte_source%s  constant_byte_source.ads  7f7bc0b6 EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W byte_source%s		byte_source.ads		byte_source.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W nio_buffer.byte_buffer%s  nio_buffer-byte_buffer.adb  nio_buffer-byte_buffer.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D byte_source.ads	20120416094952 94647070
+D constant_byte_source.ads  20120416095546 66b4d9ed
+D constant_byte_source.adb  20120416095650 220b85c9
+D interfac.ads		20130417131027 cb4a8015
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D system.ads		20130417131036 f2f2d889
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 7 byte_source.ads
+6K9*Byte_Source 13e4 8|3w6 8r27 17r42
+8h9*Object 8|8r39 17r54
+X 8 constant_byte_source.ads
+6K9*Constant_Byte_Source 21e4 9|3b14 26t4
+8R9*Object<7|8R9> 10p13 10r54 11p13 11r54 13P24 13r42 17c9 17d16 19e14 9|5r31
+. 10r40 12r17 18r54 20r17
+10V13*Value{8R9} 10>19 9|10b13 16t7
+10s19 From{string} 9|10b19 12r36 13r23
+11V13*Value{8R9} 11>19 9|18b13 24t7
+11a19 From{12|12A9} 9|18b19 20r36 21r23
+13V24*Receive{12|14R9}<7|11p13> 13>33 9|5b13 8t7
+13r33 From{8R9} 9|5b22 7r14
+17i16*Capacity{natural} 18r34
+18r7 Buffer{12|14R9} 9|7r19 13m12 14m12 21m12 22m12
+X 9 constant_byte_source.adb
+12r14 R{8|8R9} 13m10 13r10 14m10 14r10
+20r14 R{8|8R9} 21m10 21r10 22m10 22r10
+X 11 nio_buffer.ads
+5K9*Nio_Buffer 8|4r6 4r34 11|37e15
+20U14*Flip 9|14s19 22s19
+X 12 nio_buffer-byte_buffer.ads
+8K20*Byte_Buffer 8|4w17 11r28 13r57 18r15 9|5r46 18r28 12|46e4
+10M9*Byte
+12A9*Bytes(10M9)<integer> 8|11r40 9|18r40
+14R9*Object<11|7R9> 8|13r69 18r27 9|5r58 12|44e14
+20U14*put 9|13s19
+23U14*put 9|21s19
+

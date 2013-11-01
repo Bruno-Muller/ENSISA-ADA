@@ -1,0 +1,169 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_FLOATING_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_CONVERSION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U nio_buffer.byte_buffer%b  nio_buffer-byte_buffer.adb  d434ce1d NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.unchecked_conversion%s
+W interfaces%s		interfac.ads		interfac.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U nio_buffer.byte_buffer%s  nio_buffer-byte_buffer.ads  46e1e93e EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-except.ads		20130417131019 10fcae55
+D a-stream.ads		20130417131021 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131027 cb4a8015
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D nio_buffer-byte_buffer.adb  20120416093049 a0742830
+D system.ads		20130417131036 f2f2d889
+D s-exctab.ads		20130417131029 66e51330
+D s-parame.ads		20130417131032 b6e20cc0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 1 ada.ads
+16K9*Ada 19e8 9|3r6 106r48 112r48
+X 5 a-unccon.ads
+17+9 Source 9|107r73 113r73
+18+9 Target 9|108r73 114r73
+20v14*Unchecked_Conversion 9|3w10 106r52 112r52
+X 6 interfac.ads
+36K9*Interfaces 177e15 8|6w6 6r22
+49I9*Integer_32<integer> 8|31r47 32r47 9|73r47 84r26 85r19 85r38 87r19 92r47
+. 108r83 113r83 118r10 125r10
+61M9*Unsigned_32 9|74r43 74r59 78r19 84r14 85r54 93r10 96r15 96r34 98r15
+107V13*Shift_Left{61M9} 9|80s12 81s9 82s9
+111V13*Shift_Right{61M9} 9|100s18 101s18 102s18
+160F9*IEEE_Float_32<short_float> 8|34r47 35r47 9|107r83 114r83 117r47 124r47
+X 7 nio_buffer.ads
+5K9*Nio_Buffer 37e15 8|5w6 14r23 42r23
+7H9*Object 35e14 8|14r34 42r34
+7i17*Capacity{natural} 8|43r32
+9V13*Capacity{positive}
+10V13*Limit{positive}
+11V13*Position{positive}
+13V13*Remaining{natural}
+14V13*Has_Remaining{boolean}
+16U14*Position
+17U14*Limit
+19U14*Clear
+20U14*Flip
+21U14*Mark
+22U14*Reset
+23U14*Rewind
+33i7*Position{positive} 9|10m32 17m32
+X 8 nio_buffer-byte_buffer.ads
+8K20*Byte_Buffer 7|5k9 8|46e4 9|7b25 145t4
+10M9*Byte 11r9 12r47 16r47 17r47 37r51 9|9r47 16r46 62r10 70r13 100r13 101r13
+. 102r13 103r13 131r50 133r14
+12A9*Bytes(10M9)<integer> 22r47 23r47 25r47 26r47 38r51 43r15 9|37r47 42r47
+. 47r47 54r47 74r11 136r47 138r17
+14R9*Object<7|7R9> 7|9p13 10p13 11p13 13p13 14p13 16p14 17p14 19p14 20p14
+. 21p14 22p14 23p14 8|16p14 16r28 17p14 17r28 19p14 19r28 20p14 20r28 22p14
+. 22r28 23p14 23r28 25p14 25r28 26p14 26r28 28p14 28r28 29p14 29r28 31p14
+. 31r28 32p14 32r28 34p14 34r28 35p14 35r28 42c9 43r25 44e14 9|9r28 16r28
+. 23r28 30r28 37r28 42r28 47r28 54r28 61r28 68r28 73r28 92r28 117r28 124r28
+16U14*get 16=18 16<36 9|9b14 14t7 50s12 64s9
+16r18 B{14R9} 9|9b18 10m30 10r30 12r16
+16m36 Value{10M9} 9|9b36 12m7
+17U14*put 17=18 17>36 9|16b14 21t7 57s12 70s9 100s9 101s9 102s9 103s9
+17r18 B{14R9} 9|16b18 17m30 17r30 19m7
+17m36 Value{10M9} 9|16b36 19r24
+19U14*get 19=18 19<36 9|23b14 28t7
+19r18 B{14R9} 9|23b18 26m10 26r10
+19s36 Value{string} 9|23b36 25r16 26m16 26r16
+20U14*put 20=18 20>36 9|30b14 35t7
+20r18 B{14R9} 9|30b18 33m10 33r10
+20s36 Value{string} 9|30b36 32r16 33r16
+22U14*get 22=18 22<36 9|37b14 40t7 76s9
+22r18 B{14R9} 9|37b18 39m7 39r7
+22a36 Value{12A9} 9|37b36 39m13 39r20 39r33
+23U14*put 23=18 23>36 9|42b14 45t7
+23r18 B{14R9} 9|42b18 44m7 44r7
+23a36 Value{12A9} 9|42b36 44r13 44r20 44r33
+25U14*get 25=18 25<36 25>54 25>73 9|39s9 47b14 52t7
+25r18 B{14R9} 9|47b18 50m10 50r10
+25a36 Value{12A9} 9|47b36 50m16 50r16
+25i54 Offset{positive} 9|47b54 49r16 49r24
+25i73 Length{natural} 9|47b72 49r33
+26U14*put 26=18 26>36 26>54 26>73 9|44s9 54b14 59t7
+26r18 B{14R9} 9|54b18 57m10 57r10
+26a36 Value{12A9} 9|54b36 57r16
+26i54 Offset{positive} 9|54b54 56r16 56r24
+26i73 Length{natural} 9|54b72 56r33
+28U14*get 28=18 28<36 9|26s12 61b14 66t7
+28r18 B{14R9} 9|61b18 64m7 64r7
+28e36 Value{character} 9|61b36 65m7
+29U14*put 29=18 29>36 9|33s12 68b14 71t7
+29r18 B{14R9} 9|68b18 70m7 70r7
+29e36 Value{character} 9|68b36 70r32
+31U14*get 31=18 31<36 9|73b14 90t7 120s9
+31r18 B{14R9} 9|73b18 76m7 76r7
+31i36 Value{6|49I9} 9|73b36 85m10 87m10
+32U14*put 32=18 32>36 9|92b14 104t7 128s9
+32r18 B{14R9} 9|92b18 100m7 100r7 101m7 101r7 102m7 102r7 103m7 103r7
+32i36 Value{6|49I9} 9|92b36 95r10 96r50 98r27
+34U14*get 34=18 34<36 9|117b14 122t7
+34r18 B{14R9} 9|117b18 120m7 120r7
+34f36 Value{6|160F9} 9|117b36 121m7
+35U14*put 35=18 35>36 9|124b14 129t7
+35r18 B{14R9} 9|124b18 128m7 128r7
+35f36 Value{6|160F9} 9|124b36 127r40
+37V14*As_Byte{10M9} 37>23 9|131b13 134t7 140s21
+37e23 Value{character} 9|131b22 133r33
+38V14*As_Bytes{12A9} 38>23 9|136b13 143t7
+38s23 Value{string} 9|136b22 138r26 140r29 140r35
+43a7 Values{12A9} 9|12r18 19m9
+X 9 nio_buffer-byte_buffer.adb
+10i7 Idx{positive} 12r25 13r7 13r16
+17i7 Idx{positive} 19r16 20r7 20r24
+25i11 I{integer} 26r22
+32i11 I{integer} 33r22
+49i11 I{integer} 50r22
+56i11 I{integer} 57r22
+62m7 V{8|10M9} 64m13 65r30
+74a7 Bs{8|12A9} 76m13 78r31
+74a24 Us(6|61M9) 78m10 80r23 81r20 82r20 83r9
+74m56 U{6|61M9} 80m7 84r10 85r49 87r30
+77i11 I{integer} 78r13 78r34
+93m7 U{6|61M9} 96m10 98m10 100r30 101r30 102r30 103r30
+106V13 IEEE_Float_32_To_Integer_32[5|20]{6|49I9} 127s12
+112V13 Integer_32_To_IEEE_Float_32[5|20]{6|160F9} 121s16
+118i7 I{6|49I9} 120m13 121r44
+125i7 I{6|49I9} 127m7 128r13
+138a14 R{8|12A9} 139r19 140m13 140r49
+139i14 I{integer} 140r15 140r59
+

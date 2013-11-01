@@ -1,0 +1,90 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U midi.client%b		midi-client.adb		ba216657 NE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W midi%s		midi.ads		midi.ali
+W midi.proxy%s		midi-proxy.adb		midi-proxy.ali
+
+U midi.client%s		midi-client.ads		139900b9 EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W midi%s		midi.ads		midi.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_sink.ads		20120416095037 943e6865
+D interfac.ads		20130417131027 cb4a8015
+D midi.ads		20120404152431 af2188bb
+D midi-client.ads	20120404155034 139900b9
+D midi-client.adb	20120404172756 c607c418
+D midi-proxy.ads	20120416102008 c09e2a4d
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_packet.ads	20120404183756 096144be
+D osc_packet-message.ads  20120412124822 2014e080
+D osc_proxy.ads		20120416101857 b5f10c94
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 15 midi.ads
+3K9*Midi 13e4 16|3w6 7r24 17|3w6 4r6
+5h12*Object
+6C12*Class<5R12>
+7P12*Any(6C12) 16|7r29
+9x14*Note_On 17|11R19 12R19
+10x14*Bend 17|13R19
+11x14*All_Notes_Off 17|10R19
+X 16 midi-client.ads
+5K14*Client 15|3k9 16|11e4 17|6b19 16t4
+7R9*Object 7d16 7e55 9p14 9r28 17|8r28
+7p16*Target{15|7P12} 17|10r12 11r12 12r12 13r12
+9U14*Bang 9>19 17|8b14 14t7
+9r19 Self{7R9} 17|8b19 10r7 11r7 12r7 13r7
+X 18 midi-proxy.ads
+11K14*Proxy 17|4w11 18|33e4
+

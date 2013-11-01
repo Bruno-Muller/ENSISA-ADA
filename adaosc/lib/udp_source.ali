@@ -1,0 +1,149 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_DISPATCHING_CALLS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK
+
+U udp_source%b		udp_source.adb		2a375475 OO PK
+W ada%s			ada.ads			ada.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+W system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+U udp_source%s		udp_source.ads		6501b434 EE OO PF PK
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W byte_source%s		byte_source.ads		byte_source.ali
+W gnat%s		gnat.ads		gnat.ali
+W gnat.sockets%s	g-socket.adb		g-socket.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W nio_buffer.byte_buffer%s  nio_buffer-byte_buffer.adb  nio_buffer-byte_buffer.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_source.ads	20120416094952 94647070
+D gnat.ads		20130417131026 fd2ad2f1
+D g-socket.ads		20130417131026 923c234a
+D interfac.ads		20130417131027 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D system.ads		20130417131036 f2f2d889
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-oscons.ads		20130603160047 d2b348ca
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D udp_source.ads	20120416095156 eef28e25
+D udp_source.adb	20120416095246 7a5d172d
+X 1 ada.ads
+16K9*Ada 19e8 34|3r6 30r14 31r14
+X 4 a-stream.ads
+36K13*Streams 69e16 34|3w10 30r18 31r18
+42M9*Stream_Element
+44I9*Stream_Element_Offset<long_integer> 34|31r26
+51A9*Stream_Element_Array(42M9)<44I9> 34|30r26
+X 8 byte_source.ads
+6K9*Byte_Source 13e4 33|5w6 10r23 13r86 19r23 34|24r86
+8h9*Object 33|10r35 19r35
+9P9*Any(8R9) 33|13r98 34|24r98
+X 9 gnat.ads
+34K9*GNAT 37e9 33|3r6 12r28 13r28 20r17 20r45 34|4r6 6r5 12r28 13r16 24r28
+. 32r14 50r4
+X 10 g-socket.ads
+58K14*Sockets 1262e17 33|3w11 12r33 13r33 20r22 20r50 34|4w11 6r10 12r33
+. 13r21 24r33 32r19 50r9
+379U14*Initialize 34|50s17
+412I9*Socket_Type 33|20r30
+417i4*No_Socket{412I9} 33|20r58
+467n38*Socket_Datagram{467E9} 34|16r42
+479I9*Port_Type<integer> 33|12r41 13r41 34|12r41 24r41
+494r4*Any_Inet_Addr{488R9} 34|17r42
+505R9*Sock_Addr_Type 508e14 34|13r29
+506r7*Addr{488R9} 34|17m18
+507i7*Port{479I9} 34|18m18
+515V13*Image{string} 34|17s36
+524V13*Inet_Addr{488R9} 34|17s26
+749n7*N_Bytes_To_Read{747E9} 34|34r25
+751R9*Request_Type 760e14 34|32r27
+751e23*Name{747E9} 34|34m17
+757i13*Size{natural} 34|34m42 36r16
+805U14*Create_Socket 34|16s10
+808e7 Mode{467E9} 34|16r34
+835U14*Bind_Socket 34|19s10
+865U14*Control_Socket 34|35s7
+896U14*Receive_Socket 34|37s10
+X 13 nio_buffer.ads
+5K9*Nio_Buffer 37e15 33|6r6 6r34
+20U14*Flip 34|42s15
+X 14 nio_buffer-byte_buffer.ads
+8K20*Byte_Buffer 46e4 33|6w17 15r57 34|29r46 38r20 40r22 45r20
+10M9*Byte 34|40r34
+14R9*Object<13|7R9> 44e14 33|15r69 34|29r58 38r32 45r32
+17U14*put 34|40s18
+X 33 udp_source.ads
+8K9*UDP_Source 24e4 34|8b14 51t4
+10R9*Object<8|8R9> 12p13 12r86 15P24 15r42 19c9 22e14 34|12r86 15r17 26r18
+. 29r31
+12V13*Value{10R9} 12>19 12>52 34|12b13 22t7 26s26
+12i19 Port{10|479I9} 34|12b19 18r26
+12b52 Blocking{boolean} 34|12b52 20r26
+13V13*Value{8|9P9} 13>19 13>52 34|24b13 27t7
+13i19 Port{10|479I9} 34|24b19 26r32
+13b52 Blocking{boolean} 34|24b52 26r38
+15V24*Receive{14|14R9}<8|11p13> 15>33 34|29b13 47t7
+15r33 From{10R9} 34|29b22 35r22 36r28 37r25
+20i7 Socket{10|412I9} 34|16m26 19r26 35r27 37r30
+21b7 Blocking{boolean} 34|20m12 36r33
+X 34 udp_source.adb
+10N4 SIZE 30r53
+13r7 Address{10|505R9} 17m10 18m10 19r34
+15r14 R{33|10R9} 16m24 16r24 19r24 20m10
+30a7 Data{4|51A9} 37m38 40r39
+31i7 Last{4|44I9} 37m44 38r59 39r27
+32r7 Query{10|751R9} 34m7 35m35 35r35 36r10
+38r17 B{14|14R9} 40m16 40r16 42m13 42r13
+39i17 I<long_integer> 40r45
+45r17 B{14|14R9}
+

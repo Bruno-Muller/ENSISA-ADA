@@ -1,0 +1,129 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U osc_proxy%b		osc_proxy.adb		de79c397 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W nio_buffer.byte_buffer%s  nio_buffer-byte_buffer.adb  nio_buffer-byte_buffer.ali
+W osc_packet_unparser%s	osc_packet_unparser.adb	osc_packet_unparser.ali
+W system%s		system.ads		system.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U osc_proxy%s		osc_proxy.ads		173ff48a EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W byte_sink%s		byte_sink.ads		byte_sink.ali
+W osc_packet%s		osc_packet.ads		osc_packet.ali
+W system%s		system.ads		system.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_sink.ads		20120416095037 943e6865
+D interfac.ads		20130417131027 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_packet.ads	20120404183756 096144be
+D osc_packet_unparser.ads  20120416123730 6356bafc
+D osc_proxy.ads		20120416101857 b5f10c94
+D osc_proxy.adb		20120416124052 bd18e900
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-conca3.ads		20130417131029 762a026a
+D s-crtl.ads		20130417131029 dfcfca61
+D s-exctab.ads		20130417131029 66e51330
+D s-ficobl.ads		20130417131029 55a71d43
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 24|3r6 20r20 25|2r6
+X 8 a-string.ads
+16K13*Strings 35e16 24|3r10 20r24
+X 10 a-strunb.ads
+76K21*Unbounded 489e26 24|3w18 20r32
+86P9*String_Access(string) 24|20r42
+X 12 a-textio.ads
+49K13*Text_IO 471e16 25|2w10
+X 15 byte_sink.ads
+6K9*Byte_Sink 13e4 24|5w6 12r77 21r20 25|11r77
+8h9*Object
+9P9*Any(8R9) 24|12r87 21r30 25|11r87
+11x14*Send 25|21R17
+X 18 nio_buffer.ads
+5K9*Nio_Buffer 37e15 25|4r6 7r5
+X 19 nio_buffer-byte_buffer.ads
+8K20*Byte_Buffer 46e4 25|4w17 18r15
+14R9*Object<18|7R9> 44e14 25|18r27
+X 22 osc_packet.ads
+7K9*OSC_Packet 19e4 24|6w6 13r63 25|17r51
+9H12*Object 9e49 24|13r74 25|17r62
+X 23 osc_packet_unparser.ads
+8K9*OSC_Packet_Unparser 14e4 25|5w6 18r37
+10V13*Unparse{19|14R9} 25|18s57
+X 24 osc_proxy.ads
+8K9*OSC_Proxy 24e4 25|9b14 29t4
+10R9*Object 12p14 12r39 13p14 13r39 19c9 22e14 25|11r39 17r32
+12U14*Initialize 12=26 12>47 12>71 25|11b14 15t7
+12r26 Self{10R9} 25|11b26 13m7 14m7
+12s47 Target_Name{string} 25|11b47 13r39
+12p71 Sink{15|9P9} 25|11b71 14r27
+13U14*Send 13=26 13>47 25|17b14 22t7
+13r26 Self{10R9} 25|17b19 21r7
+13c47 Packet<22|9R12> 25|17b40 18r65
+15V13*Selector{string} 15>23 15>47 25|24b13 27t7
+15s23 Target_Name{string} 25|24b23 26r14
+15s47 Method_Name{string} 25|24b47 26r34
+20p7*Target_Name{10|86P9} 25|13m12
+21p7*Sink{15|9P9} 25|14m12 21r12
+X 25 osc_proxy.adb
+18r7 Buffer{19|14R9} 21r22
+

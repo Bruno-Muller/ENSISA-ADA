@@ -1,0 +1,120 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_IMPLICIT_LOOPS
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U osc_space%b		osc_space.adb		9a1ee98f NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_deallocation%s
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+W system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+U osc_space%s		osc_space.ads		9b1b9ea2 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W osc_argument%s	osc_argument.adb	osc_argument.ali
+W osc_listener%s	osc_listener.ads	osc_listener.ali
+W system%s		system.ads		system.ali
+W system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_space.ads		20120404152906 5f037f2c
+D osc_space.adb		20120409081758 3447c872
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 1 ada.ads
+16K9*Ada 19e8 15|3r6 25r13 16|3r6 19r7 22r39
+X 7 a-string.ads
+16K13*Strings 35e16 15|3r10 25r17 16|19r11
+X 9 a-strunb.ads
+76K21*Unbounded 489e26 15|3w18 25r25 16|19r19
+86P9*String_Access(string) 15|25r35
+88U14*Free 16|19s29
+X 12 a-uncdea.ads
+20u15*Unchecked_Deallocation 16|3w10 22r43
+X 13 osc_argument.ads
+5K9*OSC_Argument 40e4 15|5w6
+X 14 osc_listener.ads
+5K9*OSC_Listener 13e4 15|6w6 10r35 24r32
+7h12*Object 15|10r48 24r45
+11x14*Tell
+X 15 osc_space.ads
+8K9*OSC_Space 28e4 16|5b14 30t4
+10H12*Object<14|7R12> 14|11p14 15|11r22 16p14 16r41 17p14 17r41 19p14 19r36
+. 24c9 26e14 16|7r41 12r28 17r32 22r66
+11C12*Class<10R12> 12r33
+12P12*Any(11C12) 14r49 20r36 16|22r80 24r35
+14A9*Objects(12P12)<integer>
+16U14*Identify_Node 16=28 16>49 16|7b14 10t7
+16r28 Self{10R12} 16|7b28 9m7
+16s49 Name{string} 16|7b49 9r32
+17V14*Name{string} 17>28 16|12b13 15t7
+17r28 Self{10R12} 16|12b18 14r14
+19U14*Free 19=23 16|17b14 20t7
+19r23 Self{10R12} 16|17b19 19m34 19r34
+20U14*Dispose 20=23 16|24b14 27t7
+20p23 Self{12P12} 16|24b22 26m25
+25p7 Name{9|86P9} 16|9m12 14r19 19m39
+X 16 osc_space.adb
+22U14 Intrinsic_Dispose[12|20] 26s7
+

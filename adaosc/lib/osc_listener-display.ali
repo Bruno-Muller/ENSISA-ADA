@@ -1,0 +1,104 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+
+U osc_listener.display%b  osc_listener-display.adb  2b75dd37 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W osc_listener%s	osc_listener.ads	osc_listener.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U osc_listener.display%s  osc_listener-display.ads  587092ef EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W osc_listener%s	osc_listener.ads	osc_listener.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-ioexce.ads		20130417131020 8b9de6cd
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-textio.ads		20130417131022 386df5d4
+D a-unccon.ads		20130417131022 f9eb8f06
+D interfac.ads		20130417131027 cb4a8015
+D i-cstrea.ads		20130417131026 8128536b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_listener-display.ads  20120403074444 67e1462a
+D osc_listener-display.adb  20120403074444 74f96ec9
+D system.ads		20130417131036 f2f2d889
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-conca2.ads		20130417131029 fbd0f2fc
+D s-crtl.ads		20130417131029 dfcfca61
+D s-exctab.ads		20130417131029 66e51330
+D s-ficobl.ads		20130417131029 55a71d43
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+D s-wchcon.ads		20130417131034 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 18|3r6 19|3r6 9r7 11r10 13r7
+X 8 a-string.ads
+16K13*Strings 35e16 18|3r10
+X 10 a-strunb.ads
+76K21*Unbounded 489e26 18|3w18
+X 12 a-textio.ads
+49K13*Text_IO 471e16 19|3w10 9r11 11r14 13r11
+166U14*New_Line 19|13s19
+242U14*Put 19|9s19 11s22
+X 16 osc_argument.ads
+5K9*OSC_Argument 40e4 18|11r82 19|7r70 11r26
+10A9*Arguments(8R9)<integer> 18|11r95 19|7r83
+23V13*Image{string} 19|11s39
+X 17 osc_listener.ads
+5K9*OSC_Listener 13e4 18|5w6 9r23
+7h12*Object 18|9r36
+X 18 osc_listener-display.ads
+7K22*Display 17|5k9 18|13e4 19|5b27 16t4
+9R9*Object<17|7R12> 9e59 11P25 11r40 19|7r28
+11U25*Tell<17|11p14> 11>31 11>48 11>68 19|7b14 14t7
+11r31 Self{9R9} 19|7b19
+11s48 Message{string} 19|7b36 9r23
+11a68 Arguments{16|10A9} 19|7b56 10r16 11r45
+X 19 osc_listener-display.adb
+10i11 I{integer} 11r55
+

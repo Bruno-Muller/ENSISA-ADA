@@ -1,0 +1,137 @@
+V "GNAT Lib v2013"
+A -gnatA
+P SS ZX
+
+RN
+RV NO_DELAY
+RV NO_DISPATCHING_CALLS
+RV NO_FIXED_POINT
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_SELECT_STATEMENTS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_TASKING
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK
+RV MAX_SELECT_ALTERNATIVES=2
+RV MAX_TASK_ENTRIES=1
+
+U osc_server%b		osc_server.adb		90c75ade OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W nio_buffer%s		nio_buffer.adb		nio_buffer.ali
+W nio_buffer.byte_buffer%s  nio_buffer-byte_buffer.adb  nio_buffer-byte_buffer.ali
+W osc_packet%s		osc_packet.ads		osc_packet.ali
+W osc_packet_parser%s	osc_packet_parser.adb	osc_packet_parser.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
+W system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+U osc_server%s		osc_server.ads		198ca413 EE NE OO PK
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+W byte_source%s		byte_source.ads		byte_source.ali
+W osc_listener%s	osc_listener.ads	osc_listener.ali
+W system%s		system.ads		system.ali
+W system.parameters%s	s-parame.adb		s-parame.ali
+W system.task_info%s	s-tasinf.adb		s-tasinf.ali
+W system.tasking%s	s-taskin.adb		s-taskin.ali
+W system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+D ada.ads		20130417131023 3ffc8e18
+D a-charac.ads		20130417131019 2d3ec45b
+D a-chlat1.ads		20130417131019 2825df20
+D a-except.ads		20130417131019 10fcae55
+D a-finali.ads		20130417131020 52ecdc1b
+D a-reatim.ads		20130417131021 63f07669
+D a-stream.ads		20130417131021 2ca4ee37
+D a-string.ads		20130417131021 90ac6797
+D a-strmap.ads		20130417131021 9cb836fb
+D a-strunb.ads		20130417131021 3f91d4c5
+D a-tags.ads		20130417131022 6c0509d0
+D a-unccon.ads		20130417131022 f9eb8f06
+D a-uncdea.ads		20130417131022 f15a5ed1
+D byte_source.ads	20120416094952 94647070
+D interfac.ads		20130417131027 cb4a8015
+D i-c.ads		20130417131026 5421119b
+D nio_buffer.ads	20120416092951 b4e7e002
+D nio_buffer-byte_buffer.ads  20120416093140 8dab692b
+D osc_argument.ads	20120327162922 1a608ffe
+D osc_listener.ads	20120404160441 e1e9bab5
+D osc_packet.ads	20120404183756 096144be
+D osc_packet_parser.ads	20120416123800 4b0af0e5
+D osc_server.ads	20120416100723 6c016ed6
+D osc_server.adb	20120416124036 3306e978
+D system.ads		20130417131036 f2f2d889
+D s-atacco.ads		20130417131028 4c36d12f
+D s-atocou.ads		20130417131028 4a9c6cb4
+D s-atocou.adb		20130417131028 7116b4cf
+D s-exctab.ads		20130417131029 66e51330
+D s-finmas.ads		20130417131029 b95bb341
+D s-finroo.ads		20130417131029 4ff27390
+D s-multip.ads		20130417131030 38ac9f73
+D s-oscons.ads		20130603160047 d2b348ca
+D s-osinte.ads		20130417131031 a671a606
+D s-parame.ads		20130417131032 b6e20cc0
+D s-pooglo.ads		20130417131032 542f33d0
+D s-secsta.ads		20130417131032 eea35a36
+D s-soflin.ads		20130417131032 24c8153c
+D s-stache.ads		20130417131032 596fc1b4
+D s-stausa.ads		20130417131032 017a0a05
+D s-stalib.ads		20130417131032 f78bcf95
+D s-stoele.ads		20130417131032 facd7d98
+D s-stoele.adb		20130417131032 afc5dc80
+D s-stopoo.ads		20130417131032 7b8fbeee
+D s-stposu.ads		20130417131032 ffeba1c5
+D s-stratt.ads		20130417131032 aedef97e
+D s-tasinf.ads		20130417131033 e120e23a
+D s-taspri.ads		20130417131033 15f617a8
+D s-taprop.ads		20130417131033 1dd2e1b6
+D s-taskin.ads		20130417131033 59e95256
+D s-taprob.ads		20130417131033 502249e3
+D s-tpoben.ads		20130417131033 b641f948
+D s-tasren.ads		20130417131033 a67a9949
+D s-tassta.ads		20130417131033 70812003
+D s-traent.ads		20130417131033 5221ee41
+D s-unstyp.ads		20130417131034 6ae15c76
+X 14 byte_source.ads
+6K9*Byte_Source 13e4 23|3w6 8r24 14r29
+8h9*Object
+9P9*Any(8R9) 23|8r36 14r41
+11y13*Receive{18|14R9} 24|23R58
+X 17 nio_buffer.ads
+5K9*Nio_Buffer 37e15 24|3r6 7r5
+X 18 nio_buffer-byte_buffer.ads
+8K20*Byte_Buffer 46e4 24|3w17 23r29
+14R9*Object<17|7R9> 44e14 24|23r41
+X 20 osc_listener.ads
+5K9*OSC_Listener 13e4 23|4w6 8r52 14r56
+7h12*Object
+8C12*Class<7R12>
+9P12*Any(8C12) 23|8r65 14r69
+X 21 osc_packet.ads
+7K9*OSC_Packet 19e4 24|4w6 19r16 24r28
+10C12*Class<9R12> 24|24r39
+11P12*Any(10C12) 24|19r27
+13U14*Interpret 24|28R23
+X 22 osc_packet_parser.ads
+8K9*OSC_Packet_Parser 14e4 24|5w6 24r48
+10V13*Parse{21|11P12} 24|24s66
+X 23 osc_server.ads
+6K9*OSC_Server 18e4 24|9b14 39t4
+8T9*Object 8d16 8d41 10r36 16e7 24|13r36 18b14 37t7
+8p16 Source{14|9P9} 14r21 24|23r51
+8p41 Listener{20|9P12} 14r46 24|28r33
+10U14*Shutdown 10=23 24|13b14 16t6
+10t23 Self{8T9} 24|13b23 15r7
+15Y13 Shutdown 24|15s12 32b20
+X 24 osc_server.adb
+11o4 Period{duration} 34r19
+23r13 Buffer{18|14R9} 24m72 24r72
+24p13 Packet(21|10C12) 26r16 28r16
+X 40 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+
