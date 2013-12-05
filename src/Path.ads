@@ -31,6 +31,6 @@ private
       Values: Points (1..Size);
    end record;
 
-   --Null_Path : constant Object := ...
+   Null_Path : constant Object := Object'(Size => 0, Values => <>);
 
 end Path;
