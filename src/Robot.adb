@@ -1,4 +1,5 @@
 with Robot.Trajectory;
+with Site;
 
 package body Robot is
 
@@ -20,16 +21,14 @@ package body Robot is
                while not Trajectory.At_End(Its_Trajectory) loop
                   Next := Next + 0.05;
 
-
-                  Robot.Draw(P => Trajectory.XY(Its_Trajectory),
-                             Dir => Trajectory.Direction(Its_Trajectory),
-                             Mouth => Mouth,
-                             Color => Color);
+                  Site.Safely.Draw_Robot(Pnt    =>  Trajectory.XY(Its_Trajectory),
+                                         Radius => Radius,
+                                         Dir    => Trajectory.Direction(Its_Trajectory),
+                                         Mth    => Mouth,
+                                         Clr    => Color);
                   delay until Next;
-                  Robot.Draw(P => Trajectory.XY(Its_Trajectory),
-                             Dir => Trajectory.Direction(Its_Trajectory),
-                             Mouth => Closed, -- pour gagner un peu de perf
-                             Color => Black);
+                  Site.Safely.Hide_Robot(Pnt    => Trajectory.XY(Its_Trajectory),
+                                         Radius => Radius);
 
                   if Counter=7 then
                      Counter:=0;
@@ -52,21 +51,5 @@ package body Robot is
             end Shutdown;
       end select;
    end Object;
-
-   procedure Draw(P: in Point; Dir: in Vector; Mouth: in Mouth_State; Color: in Color_Type) is
-      Theta: Float;
-   begin
-      Adagraph.Draw_Circle(X => Integer(P.X), Y => Integer(P.Y), Radius => Integer(Radius), Hue => Color, Filled => Adagraph.Fill);
-      if (Mouth=Opened) then
-         for I in -10..10 loop
-            Theta := Float(I*3)/180.0*3.14159265;
-            Draw_Line(X1 => Integer(P.X),
-                      Y1 => Integer(P.Y),
-                      X2 => Integer(P.X + Radius * (Dir.X * Cos(Theta) - Dir.Y * Sin(Theta))),
-                      Y2 => Integer(P.Y + Radius * (Dir.X * Sin(Theta) + Dir.Y * Cos(Theta))),
-                      Hue => Black);
-         end loop;
-      end if;
-   end Draw;
 
 end Robot;

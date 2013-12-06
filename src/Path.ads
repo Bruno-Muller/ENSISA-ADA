@@ -1,6 +1,5 @@
 with Adagraph; use Adagraph;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
-with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 package Path is
 
@@ -24,8 +23,6 @@ package Path is
 
    function Segment_Count (Path: in Object) return Natural;
    function Segment_Length (Path: in Object; Segment: in Positive) return Float;
-
-   procedure Draw (Path: in Object; Color: in Color_Type := Light_Green);
 
    function X (Path: in Object; Segment: in Positive; K: in Float) return Float;
    function Y (Path: in Object; Segment: in Positive; K: in Float) return Float;

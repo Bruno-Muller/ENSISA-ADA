@@ -1,3 +1,5 @@
+with Site;
+
 package body Path is
 
    function Value (From: Points) return Object is
@@ -36,28 +38,6 @@ package body Path is
    begin
       return Sqrt(DeltaX**2+DeltaY**2);
    end Segment_Length;
-
-   procedure Draw (Path: in Object; Color: in Color_Type := Light_Green) is
-      P: Point;
-      Number_Of_Cookies: Integer := 0;
-   begin
-      for I in 1..Path.Size-1 loop
-         Number_Of_Cookies := Integer(Segment_Length(Path => Path, Segment => I) / 14.0);
-         Ada.Integer_Text_IO.Put(Number_Of_Cookies);
-         for Cookie in 0..Number_Of_Cookies loop
-            P := XY(Path => Path,
-                    Segment => I,
-                    K => (Float(Cookie)/Float(Number_Of_Cookies)));
-
-            Adagraph.Draw_Box(X1 => Integer(P.X-2.0),
-                              Y1 => Integer(P.Y-2.0),
-                              X2 => Integer(P.X+2.0),
-                              Y2 => Integer(P.Y+2.0),
-                              Hue => Color,
-                             Filled => Fill);
-         end loop;
-      end loop;
-   end Draw;
 
    function X (Path: in Object; Segment: in Positive; K: in Float) return Float is
    begin
