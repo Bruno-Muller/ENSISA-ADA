@@ -2,7 +2,7 @@ package body Path is
 
    function Value (From: Points) return Object is
    begin
-       return Object'(Size => From'Length, Values => From);
+      return Object'(Size => From'Length, Values => From);
    end Value;
 
    function "&" (Left: in Object ; Right: in Object) return Object is
@@ -22,7 +22,7 @@ package body Path is
 
    procedure Add (Path: in out Object; P: in Point) is
    begin
-	Path := Path & P;
+      Path := Path & P;
    end Add;
 
    function Segment_Count (Path: in Object) return Natural is
@@ -38,13 +38,22 @@ package body Path is
    end Segment_Length;
 
    procedure Draw (Path: in Object; Color: in Color_Type := Light_Green) is
+      P: Point;
    begin
       for I in 1..Path.Size-1 loop
-         Draw_Line(X1 => Integer(Path.Values(I).X),
-                   Y1 => Integer(Path.Values(I).Y),
-                   X2 => Integer(Path.Values(I+1).X),
-                   y2 => Integer(Path.Values(I+1).Y),
-                   Hue => Color);
+         for DeltaK in 0..10 loop
+            P := XY(Path => Path,
+                    Segment => I,
+                    K => (Float(DeltaK)/10.0));
+
+            Adagraph.Draw_Box(X1 => Integer(P.X-2.0),
+                              Y1 => Integer(P.Y-2.0),
+                              X2 => Integer(P.X+2.0),
+                              Y2 => Integer(P.Y+2.0),
+                              Hue => Color,
+                             Filled => Fill);
+         end loop;
+         --Draw_Line(X1 => Integer(Path.Values(I).X), Y1 => Integer(Path.Values(I).Y), X2 => Integer(Path.Values(I+1).X), y2 => Integer(Path.Values(I+1).Y), Hue => Color);
       end loop;
    end Draw;
 
@@ -57,5 +66,11 @@ package body Path is
    begin
       return Path.Values(Segment).Y + K * (Path.Values(Segment+1).Y-Path.Values(Segment).Y);
    end Y;
+
+   function XY (Path: in Object; Segment: in Positive; K: in Float) return Point is
+   begin
+      return Point'(X => X(Path => Path, Segment => Segment, K => K),
+                   Y => Y(Path => Path, Segment => Segment, K => K));
+   end XY;
 
 end Path;

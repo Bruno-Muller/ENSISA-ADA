@@ -28,6 +28,7 @@ package Path is
 
    function X (Path: in Object; Segment: in Positive; K: in Float) return Float;
    function Y (Path: in Object; Segment: in Positive; K: in Float) return Float;
+   function XY (Path: in Object; Segment: in Positive; K: in Float) return Point;
 
 private
 
