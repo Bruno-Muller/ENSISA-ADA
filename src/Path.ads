@@ -26,6 +26,9 @@ package Path is
 
    procedure Draw (Path: in Object; Color: in Color_Type := Light_Green);
 
+   function X (Path: in Object; Segment: in Positive; K: in Float) return Float;
+   function Y (Path: in Object; Segment: in Positive; K: in Float) return Float;
+
 private
 
    subtype Count is Natural range 0..50;

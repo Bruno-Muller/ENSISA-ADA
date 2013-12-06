@@ -48,4 +48,14 @@ package body Path is
       end loop;
    end Draw;
 
+   function X (Path: in Object; Segment: in Positive; K: in Float) return Float is
+   begin
+      return Path.Values(Segment).X + K * (Path.Values(Segment+1).X-Path.Values(Segment).X);
+   end X;
+
+   function Y (Path: in Object; Segment: in Positive; K: in Float) return Float is
+   begin
+      return Path.Values(Segment).Y + K * (Path.Values(Segment+1).Y-Path.Values(Segment).Y);
+   end Y;
+
 end Path;

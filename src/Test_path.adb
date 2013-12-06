@@ -2,8 +2,8 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
+with Adagraph; use Adagraph;
 with Path;
-with Adagraph;
 
 
 procedure Test_Path is
@@ -22,8 +22,8 @@ begin
    Put(MyPoint.Y);
    Put_Line("");
 
-   MyPoint.X := 5.0;
-   MyPoint.Y := 5.0;
+   MyPoint.X := 10.0;
+   MyPoint.Y := 10.0;
 
    Put("MyPoint.X:");
    Put(MyPoint.X);
@@ -35,10 +35,10 @@ begin
    -- /Test Point
 
    Path.Add(Path => MyPath, P => MyPoint);
-   Path.Add(Path => MyPath, P => (X => 55.0, Y => 5.0));
-   Path.Add(Path => MyPath, P => (X => 55.0, Y => 55.0));
-   Path.Add(Path => MyPath, P => (X => 5.0, Y => 55.0));
-   Path.Add(Path => MyPath, P => (X => 5.0, Y => 5.0));
+   Path.Add(Path => MyPath, P => (X => 100.0, Y => 10.0));
+   Path.Add(Path => MyPath, P => (X => 100.0, Y => 100.0));
+   Path.Add(Path => MyPath, P => (X => 10.0, Y => 100.0));
+   Path.Add(Path => MyPath, P => (X => 10.0, Y => 10.0));
 
    -- Test Path.Object
    Put("Segment_Count:");
@@ -58,6 +58,18 @@ begin
    Adagraph.Clear_Window;
 
    Path.Draw(Path => Mypath);
+
+   for I in 1..Path.Segment_Count(MyPath) loop
+      for DeltaK in 0..9 loop
+         Adagraph.Draw_Circle(X => Integer(Path.X(Path => MyPath, Segment => I, k => (Float(DeltaK)/10.0))),
+                              Y => Integer(Path.Y(Path => MyPath, Segment => I, k => (Float(DeltaK)/10.0))),
+                              Radius => 10,Hue => Light_Green, Filled => Adagraph.Fill);
+         delay 0.05;
+         Adagraph.Draw_Circle(X => Integer(Path.X(Path => MyPath, Segment => I, k => (Float(DeltaK)/10.0))),
+                              Y => Integer(Path.Y(Path => MyPath, Segment => I, k => (Float(DeltaK)/10.0))),
+                              Radius => 10,Hue => Black, Filled => Adagraph.Fill);
+      end loop;
+   end loop;
 
    while not Adagraph.Key_Hit loop
       delay 0.1;
