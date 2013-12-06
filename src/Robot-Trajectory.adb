@@ -25,15 +25,36 @@ package body Robot.Trajectory is
                     K => T.K);
    end Y;
 
+   function XY(T: in Object) return Point is
+   begin
+      return Point'(X => Trajectory.X(T),
+                    Y => Trajectory.Y(T));
+   end XY;
+
+   function Direction(T: in Object) return Vector is
+      X1: Float := Path.X(Path => T.Route, Segment => T.Segment, K => 0.0);
+      X2: Float := Path.X(Path => T.Route, Segment => T.Segment, K => 1.0);
+      Y1: Float := Path.Y(Path => T.Route, Segment => T.Segment, K => 0.0);
+      Y2: Float := Path.Y(Path => T.Route, Segment => T.Segment, K => 1.0);
+      DeltaX: Float := X2 - X1;
+      DeltaY: Float := Y2 - Y1;
+      Length: Float := Sqrt(DeltaX**2+DeltaY**2);
+   begin
+      return Vector'(X => DeltaX/Length, Y => DeltaY/Length);
+   end Direction;
+
    procedure Next(T: in out Object; DeltaT: in Float) is
       DeltaK: Float := T.Speed/Path.Segment_Length(Path => T.Route, Segment => T.Segment)*DeltaT;
    begin
-      T.K := T.K + DeltaK;
-      if T.K>1.0 then
-         T.K := 0.0;
-         T.Segment := T.Segment + 1;
-         if T.Segment>Path.Segment_Count(Path => T.Route) then
-            T.At_End := True;
+      if not T.At_End then
+         T.K := T.K + DeltaK;
+         if T.K>1.0 then
+            T.K := 0.0;
+            if (T.Segment+1)>Path.Segment_Count(Path => T.Route) then
+               T.At_End := True;
+            else
+               T.Segment := T.Segment + 1;
+            end if;
          end if;
       end if;
    end Next;

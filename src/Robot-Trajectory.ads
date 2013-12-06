@@ -8,6 +8,9 @@ package Robot.Trajectory is
    procedure Open(T: in out Object; P: in Path.Object; Speed: in Float);
    function X(T: in Object) return Float;
    function Y(T: in Object) return Float;
+   function XY(T : in Object) return Point;
+   function Direction(T: in Object) return Vector;
+
    procedure Next(T: in out Object; DeltaT: in Float);
    function At_End(T: in Object) return Boolean;
 

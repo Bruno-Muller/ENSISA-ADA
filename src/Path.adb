@@ -53,7 +53,6 @@ package body Path is
                               Hue => Color,
                              Filled => Fill);
          end loop;
-         --Draw_Line(X1 => Integer(Path.Values(I).X), Y1 => Integer(Path.Values(I).Y), X2 => Integer(Path.Values(I+1).X), y2 => Integer(Path.Values(I+1).Y), Hue => Color);
       end loop;
    end Draw;
 
