@@ -50,6 +50,8 @@ package body Site is
    end Safely;
 
 begin
-   null; -- Créer la fenêtre, etc
+   Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);
+   Adagraph.Set_Window_Title("PACMAN");
+   Adagraph.Clear_Window;
 
 end Site;
