@@ -1,8 +1,3 @@
---with Adagraph; use Adagraph;
---with Interfaces; use Interfaces;
---with Ada.Numerics; use Ada.Numerics;
---with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
-
 package body Path is
 
    function Value (From: Points) return Object is
@@ -16,17 +11,13 @@ package body Path is
    end "&";
 
    function "&" (Left: in Object; Right: in Point) return Object is
-      P: Points := Left.Values;
    begin
-      P(Left.Size+1) := Right;
-      return Object'(Size => Left.Size+1, Values => P);
+      return Object'(Size => Left.Size+1, Values => Left.Values & Right);
    end "&";
 
    function "&" (Left: in Point; Right: in Object) return Object is
-      P: Points := Right.Values;
    begin
-      P(Right.Size+1) := Left;
-      return Object'(Size => Right.Size+1, Values => P);
+      return Object'(Size => Right.Size+1, Values => Left & Right.Values);
    end "&";
 
    procedure Add (Path: in out Object; P: in Point) is
