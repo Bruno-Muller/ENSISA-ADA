@@ -1,3 +1,5 @@
+with Site; use Site;
+
 package body Robot.Trajectory is
 
    function Route(Trj: in Object) return Path.Object is
@@ -6,11 +8,20 @@ package body Robot.Trajectory is
    end Route;
 
    procedure Open(Trj: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
+      Plc: Site.Ring_Places := Site.Way_In(From => From);
    begin
-
-
-
-      -- TODO construire la route
+      Path.Add(Trj.Route, Site.Get_Point(Pnt => From));
+      if Site.Opposite(Site.Way_In(From => From))=Site.Way_Out(To => To) then
+         Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
+         Path.Add(Trj.Route, Site.Get_Point(Site.C));
+      else
+         while (Plc/=Site.Way_Out(To => To)) loop
+            Path.Add(Trj.Route, Site.Get_Point(Plc));
+            Plc := Site.Next(Plc);
+         end loop;
+      end if;
+      Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
+      Path.Add(Trj.Route, Site.Get_Point(Pnt => To));
       Trj.Speed := Speed;
    end Open;
 
@@ -31,7 +42,7 @@ package body Robot.Trajectory is
    function XY(Trj: in Object) return Path.Point is
    begin
       return Path.Point'(X => Trajectory.X(Trj),
-                    Y => Trajectory.Y(Trj));
+                         Y => Trajectory.Y(Trj));
    end XY;
 
    function Direction(Trj: in Object) return Path.Vector is

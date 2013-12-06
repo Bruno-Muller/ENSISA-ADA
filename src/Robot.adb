@@ -17,6 +17,9 @@ package body Robot is
                                To => To,
                                Speed => 75.0);
 
+               Site.Safely.Draw_Path(Pth => Its_Trajectory.Route,
+                                     Clr => Color);
+
                Next := Ada.Calendar.Clock;
                while not Trajectory.At_End(Its_Trajectory) loop
                   Next := Next + 0.05;

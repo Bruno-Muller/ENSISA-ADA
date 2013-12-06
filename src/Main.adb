@@ -1,22 +1,19 @@
-with Adagraph;
+with Adagraph; use Adagraph;
 with Site;
 with Robot;
 with Path;
+with Site;
 
 
 procedure Main is
-   MyPath: Path.Object := Path.Null_Path;
-   MyRobot: Robot.Object;
+   MyRobot1: Robot.Object;
+   MyRobot2: Robot.Object(Blue);
 begin
 
    Site.Safely.Draw_Site;
 
-   Path.Add(Path => MyPath, P => (X => 100.0, Y => 100.0));
-   Path.Add(Path => MyPath, P => (X => 500.0, Y => 100.0));
-   Path.Add(Path => MyPath, P => (X => 100.0, Y => 500.0));
-   Path.Add(Path => MyPath, P => (X => 500.0, Y => 500.0));
-
-   Site.Safely.Draw_Path(Pth => Mypath);
+   MyRobot1.Go(From => Site.I1, To   => Site.O6);
+   MyRobot2.Go(From => Site.I4, To   => Site.O1);
 
 
 
