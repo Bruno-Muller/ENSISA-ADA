@@ -1,3 +1,4 @@
+with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
 with Site;
 
 package body Path is

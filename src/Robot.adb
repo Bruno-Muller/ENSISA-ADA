@@ -1,20 +1,20 @@
 with Robot.Trajectory;
-with Site;
 
 package body Robot is
 
    task body Object is
-      Next: Ada.Calendar.Time := Clock;
+      Next: Ada.Calendar.Time := Ada.Calendar.Clock;
       Counter: Integer := 0;
       State: State_Type := Ready;
-      Mouth: Mouth_State := Closed;
+      Mouth_Opened: Boolean := False;
       Its_Trajectory: Trajectory.Object;
    begin
       select
-         when State=Ready => accept Follow(P: Path.Object) do
+         when State=Ready => accept Go(From: Site.Input_Places; To: Site.Output_Places) do
                State := Following;
-               Trajectory.Open(T => Its_Trajectory,
-                               P => P,
+               Trajectory.Open(Trj => Its_Trajectory,
+                               From => From,
+                               To => To,
                                Speed => 75.0);
 
                Next := Ada.Calendar.Clock;
@@ -23,8 +23,8 @@ package body Robot is
 
                   Site.Safely.Draw_Robot(Pnt    =>  Trajectory.XY(Its_Trajectory),
                                          Radius => Radius,
-                                         Dir    => Trajectory.Direction(Its_Trajectory),
-                                         Mth    => Mouth,
+                                         Direction    => Trajectory.Direction(Its_Trajectory),
+                                         Mouth_Opened    => Mouth_Opened,
                                          Clr    => Color);
                   delay until Next;
                   Site.Safely.Hide_Robot(Pnt    => Trajectory.XY(Its_Trajectory),
@@ -32,19 +32,15 @@ package body Robot is
 
                   if Counter=7 then
                      Counter:=0;
-                     if Mouth=Opened then
-                        Mouth:=Closed;
-                     else
-                        Mouth:=Opened;
-                     end if;
+                     Mouth_Opened := not Mouth_Opened;
                   end if;
 
                   Counter := Counter + 1;
-                  Trajectory.Next(T => Its_Trajectory, DeltaT => 0.05);
+                  Trajectory.Next(Trj => Its_Trajectory, DeltaT => 0.05);
                end loop;
 
                State := Ready;
-            end Follow;
+            end Go;
       or
          when State=Ready => accept Shutdown do
                State := Ready;

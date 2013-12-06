@@ -2,49 +2,152 @@ package body Site is
 
    function Way_Out(To: Output_Places) return Ring_Places is
    begin
-      return R1;
+      case To is
+         when O1 => return R1;
+         when O2 => return R2;
+         when O3 => return R3;
+         when O4 => return R4;
+         when O5 => return R5;
+         when O6 => return R6;
+      end case;
    end Way_Out;
 
-   function Way_In(From: Input_Places) return Ring_Places is
+   function Way_In(From: Ring_Places) return Input_Places is
    begin
-      return R1;
+      case From is
+         when R1 => return I1;
+         when R2 => return I2;
+         when R3 => return I3;
+         when R4 => return I4;
+         when R5 => return I5;
+         when R6 => return I6;
+      end case;
    end Way_In;
 
-   function Next return Ring_Places is
+   function Next(Place: Ring_Places) return Ring_Places is
    begin
-      return R1;
+      case Place is
+         when R1 => return R2;
+         when R2 => return R3;
+         when R3 => return R4;
+         when R4 => return R5;
+         when R5 => return R6;
+         when R6 => return R1;
+      end case;
    end Next;
 
-   function Previous return Ring_Places is
+   function Previous(Place: Ring_Places) return Ring_Places is
    begin
-      return R1;
+      case Place is
+         when R1 => return R6;
+         when R2 => return R1;
+         when R3 => return R2;
+         when R4 => return R3;
+         when R5 => return R4;
+         when R6 => return R5;
+      end case;
    end Previous;
 
-   function Opposite return Ring_Places is
+   function Opposite(Place: Ring_Places) return Ring_Places is
    begin
-      return R1;
+      case Place is
+         when R1 => return R4;
+         when R2 => return R5;
+         when R3 => return R6;
+         when R4 => return R1;
+         when R5 => return R2;
+         when R6 => return R3;
+      end case;
    end Opposite;
 
    protected body Safely is
 
-      procedure Draw_Site is
+      procedure Draw_Site(Clr: in Color_Type := Dark_Gray) is
+         function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point is
+         begin
+            return Path.Point'(X => Ctr.X + R * Cos(Angle/180.0*3.14159265),
+                               Y => Ctr.Y + R * Sin(Angle/180.0*3.14159265));
+         end Get_Point;
+
+         PolyA, PolyB, Tri1, Tri2, Tri3, Som1, Som2: Path.Point;
+
       begin
-         null;
+
+         for I in 0..6 loop
+            PolyA := Get_Point(Center, Radius, Float(I*60-30));
+            PolyB := Get_Point(Center, Radius, Float(I*60+30));
+            Tri1 := Get_Point(Center, 40.0, Float(I*60));
+            Tri2 := Get_Point(PolyA, 40.0, Float(I*60)+120.0);
+            Tri3 := Get_Point(PolyB, 40.0, Float(I*60)+240.0);
+            Som1 := Get_Point(PolyA, 40.0, Float(I*60)+60.0);
+            Som2 := Get_Point(PolyB, 40.0, Float(I*60)+300.0);
+
+            Adagraph.Draw_Line(X1 => Integer(Tri1.X),
+                               Y1 => Integer(Tri1.Y),
+                               X2 => Integer(Tri2.X),
+                               Y2 => Integer(Tri2.Y),
+                               Hue => Clr);
+
+
+            Adagraph.Draw_Line(X1 => Integer(Tri2.X),
+                               Y1 => Integer(Tri2.Y),
+                               X2 => Integer(Tri3.X),
+                               Y2 => Integer(Tri3.Y),
+                               Hue => Clr);
+
+            Adagraph.Draw_Line(X1 => Integer(Tri1.X),
+                               Y1 => Integer(Tri1.Y),
+                               X2 => Integer(Tri3.X),
+                               Y2 => Integer(Tri3.Y),
+                               Hue => Clr);
+            Adagraph.Draw_Line(X1 => Integer(Som1.X),
+                               Y1 => Integer(Som1.Y),
+                               X2 => Integer(Som2.X),
+                               Y2 => Integer(Som2.Y),
+                               Hue => Clr);
+         end loop;
       end Draw_Site;
 
-      procedure Draw_Path is
+      procedure Draw_Path(Pth: in Path.Object; Clr: in Color_Type := Light_Green) is
+         Pnt: Path.Point;
+         Number_Of_Cookies: Integer := 0;
       begin
-         null;
+         for I in 1..Path.Segment_Count(Pth) loop
+            Number_Of_Cookies := Integer(Path.Segment_Length(Path => Pth, Segment => I) / 14.0);
+            for Cookie in 0..Number_Of_Cookies loop
+               Pnt := Path.XY(Path => Pth,
+                              Segment => I,
+                              K => (Float(Cookie)/Float(Number_Of_Cookies)));
+
+               Adagraph.Draw_Box(X1 => Integer(Pnt.X-2.0),
+                                 Y1 => Integer(Pnt.Y-2.0),
+                                 X2 => Integer(Pnt.X+2.0),
+                                 Y2 => Integer(Pnt.Y+2.0),
+                                 Hue => Clr,
+                                 Filled => Fill);
+            end loop;
+         end loop;
       end Draw_Path;
 
-      procedure Draw_Robot is
+      procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector; Mouth_Opened: in Boolean; Clr: in Color_Type) is
+         Theta: Float;
       begin
-         null;
+         Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Clr, Filled => Fill);
+         if Mouth_Opened then
+            for I in -10..10 loop
+               Theta := Float(I*3)/180.0*3.14159265;
+               Draw_Line(X1 => Integer(Pnt.X),
+                         Y1 => Integer(Pnt.Y),
+                         X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
+                         Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
+                         Hue => Black);
+            end loop;
+         end if;
       end Draw_Robot;
 
-      procedure Hide_Robot is
+      procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float) is
       begin
-         null;
+         Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Black, Filled => Fill);
       end Hide_Robot;
 
    end Safely;

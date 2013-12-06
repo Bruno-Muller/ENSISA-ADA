@@ -1,25 +1,16 @@
 with Adagraph; use Adagraph;
 with Ada.Calendar; use Ada.Calendar;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
-with Ada.Float_Text_IO;
-with Path; use Path;
+with Site;
 
 package Robot is
 
-   type Vector is record
-      X, Y: Float :=0.0;
-   end record;
-
    type State_Type is (Ready, Following);
-   type Mouth_State is (Opened, Closed);
 
    task type Object(Color: Color_Type := Light_Green) is
-      entry Follow(P: Path.Object);
+      entry Go(From: Site.Input_Places; To: Site.Output_Places);
       entry Shutdown;
    end Object;
-
-   procedure Draw(P: in Point; Dir: in Vector; Mouth: in Mouth_State; Color: in Color_Type);
-
 
 private
    Radius: constant Float := 16.0;

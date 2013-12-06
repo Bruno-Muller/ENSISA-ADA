@@ -1,6 +1,3 @@
-with Adagraph; use Adagraph;
-with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
-
 package Path is
 
    type Object is private;
@@ -9,6 +6,10 @@ package Path is
 
    type Point is record
       X, Y : Float := 0.0;
+   end record;
+
+   type Vector is record
+      X, Y: Float :=0.0;
    end record;
 
    type Points is array (Natural range <>) of Point;
