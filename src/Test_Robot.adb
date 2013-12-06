@@ -13,9 +13,9 @@ procedure Test_Robot is
    X_Max, Y_Max: Integer; X_Char, Y_Char: Integer;
 begin
    Path.Add(Path => MyPath, P => (X => 100.0, Y => 100.0));
-   Path.Add(Path => MyPath, P => (X => 200.0, Y => 100.0));
-   Path.Add(Path => MyPath, P => (X => 100.0, Y => 200.0));
-   Path.Add(Path => MyPath, P => (X => 200.0, Y => 200.0));
+   Path.Add(Path => MyPath, P => (X => 500.0, Y => 100.0));
+   Path.Add(Path => MyPath, P => (X => 100.0, Y => 500.0));
+   Path.Add(Path => MyPath, P => (X => 500.0, Y => 500.0));
 
    -- Test ui
    Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);

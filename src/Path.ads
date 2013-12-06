@@ -1,5 +1,6 @@
 with Adagraph; use Adagraph;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 package Path is
 

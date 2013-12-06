@@ -6,6 +6,10 @@ with Path; use Path;
 
 package Robot is
 
+   type Vector is record
+      X, Y: Float :=0.0;
+   end record;
+
    type State_Type is (Ready, Following);
    type Mouth_State is (Opened, Closed);
 
@@ -14,7 +18,7 @@ package Robot is
       entry Shutdown;
    end Object;
 
-   procedure Draw(P: in Point; Next_Point: in Point; Mouth: in Mouth_State; Color: in Color_Type);
+   procedure Draw(P: in Point; Dir: in Vector; Mouth: in Mouth_State; Color: in Color_Type);
 
 
 private
