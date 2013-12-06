@@ -1,6 +1,4 @@
 with Adagraph; use Adagraph;
-with Interfaces; use Interfaces;
-with Ada.Numerics; use Ada.Numerics;
 with Ada.Numerics.Elementary_Functions; use Ada.Numerics.Elementary_Functions;
 
 package Path is

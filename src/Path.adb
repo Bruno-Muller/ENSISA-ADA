@@ -39,11 +39,11 @@ package body Path is
 
    procedure Draw (Path: in Object; Color: in Color_Type := Light_Green) is
    begin
-      for I in 1..Path.Size loop
+      for I in 1..Path.Size-1 loop
          Draw_Line(X1 => Integer(Path.Values(I).X),
                    Y1 => Integer(Path.Values(I).Y),
-                   X2 => Integer(Path.Values(I).X),
-                   y2 => Integer(Path.Values(I).Y),
+                   X2 => Integer(Path.Values(I+1).X),
+                   y2 => Integer(Path.Values(I+1).Y),
                    Hue => Color);
       end loop;
    end Draw;
