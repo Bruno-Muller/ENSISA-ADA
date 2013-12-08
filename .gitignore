@@ -1,5 +1,5 @@
-*.o
-*.ali
 .#*#
 
 obj/*
+adagraph/*
+adaosc/*
