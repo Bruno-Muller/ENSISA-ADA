@@ -12,15 +12,15 @@ package body Site is
       end case;
    end Way_Out;
 
-   function Way_In(From: Ring_Places) return Input_Places is
+   function Way_In(From: Input_Places) return Ring_Places is
    begin
       case From is
-         when R1 => return I1;
-         when R2 => return I2;
-         when R3 => return I3;
-         when R4 => return I4;
-         when R5 => return I5;
-         when R6 => return I6;
+         when I1 => return R1;
+         when I2 => return R2;
+         when I3 => return R3;
+         when I4 => return R4;
+         when I5 => return R5;
+         when I6 => return R6;
       end case;
    end Way_In;
 
@@ -60,14 +60,43 @@ package body Site is
       end case;
    end Opposite;
 
+   function Get_Point(Pnt: Places_Names) return Path.Point is
+   begin
+      case Pnt is
+         when C => return Center;
+         when R1 => return Get_Point(Center, Radius, -30.0);
+         when R2 => return Get_Point(Center, Radius, -90.0);
+         when R3 => return Get_Point(Center, Radius, -150.0);
+         when R4 => return Get_Point(Center, Radius, -210.0);
+         when R5 => return Get_Point(Center, Radius, -270.0);
+         when R6 => return Get_Point(Center, Radius, -330.0);
+
+         when O1 => return Get_Point(Center, Radius+50.0, -30.0+5.0);
+         when O2 => return Get_Point(Center, Radius+50.0, -90.0+5.0);
+         when O3 => return Get_Point(Center, Radius+50.0, -150.0+5.0);
+         when O4 => return Get_Point(Center, Radius+50.0, -210.0+5.0);
+         when O5 => return Get_Point(Center, Radius+50.0, -270.0+5.0);
+         when O6 => return Get_Point(Center, Radius+50.0, -330.0+5.0);
+
+         when I1 => return Get_Point(Center, Radius+50.0, -30.0-5.0);
+         when I2 => return Get_Point(Center, Radius+50.0, -90.0-5.0);
+         when I3 => return Get_Point(Center, Radius+50.0, -150.0-5.0);
+         when I4 => return Get_Point(Center, Radius+50.0, -210.0-5.0);
+         when I5 => return Get_Point(Center, Radius+50.0, -270.0-5.0);
+         when I6 => return Get_Point(Center, Radius+50.0, -330.0-5.0);
+      end case;
+   end Get_Point;
+
+   function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point is
+   begin
+      return Path.Point'(X => Ctr.X + R * Cos(Angle/180.0*3.14159265),
+                         Y => Ctr.Y + R * Sin(Angle/180.0*3.14159265));
+   end Get_Point;
+
    protected body Safely is
 
       procedure Draw_Site(Clr: in Color_Type := Dark_Gray) is
-         function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point is
-         begin
-            return Path.Point'(X => Ctr.X + R * Cos(Angle/180.0*3.14159265),
-                               Y => Ctr.Y + R * Sin(Angle/180.0*3.14159265));
-         end Get_Point;
+
 
          PolyA, PolyB, Tri1, Tri2, Tri3, Som1, Som2: Path.Point;
 

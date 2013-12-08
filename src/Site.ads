@@ -18,10 +18,12 @@ package Site is
    subtype Central_Place is Places_Names range C..C;
 
    function Way_Out(To: Output_Places) return Ring_Places;
-   function Way_In(From: Ring_Places) return Input_Places;
+   function Way_In(From: Input_Places) return Ring_Places;
    function Next(Place: Ring_Places) return Ring_Places;
    function Previous(Place: Ring_Places) return Ring_Places;
    function Opposite(Place: Ring_Places) return Ring_Places;
+   function Get_Point(Pnt: Places_Names) return Path.Point;
+   function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point ;
 
    protected Safely is
       procedure Draw_Site(Clr: in Color_Type := Dark_Gray);
