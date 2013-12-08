@@ -1,9 +1,0 @@
-library project Libadaosc is
-
-   for Source_Dirs  use ("src/**");
-   for Library_Name use "adaosc";
-   for Library_Dir  use "lib";
-   for Externally_Built use "True";
-
-end Libadaosc;
-

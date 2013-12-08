@@ -1,9 +1,0 @@
-library project Libadagraph is
-
-   for Source_Dirs  use ("src/**");
-   for Library_Name use "adagraph";
-   for Library_Dir  use "lib";
-   for Externally_Built use "True";
-
-end Libadagraph;
-
