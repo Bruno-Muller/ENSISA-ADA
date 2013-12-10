@@ -8,17 +8,16 @@ package body Robot.Trajectory is
    end Route;
 
    procedure Open(Trj: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
-      Plc: Site.Ring_Places := Site.Way_In(From => From);
    begin
       Path.Add(Trj.Route, Site.Get_Point(Pnt => From));
+      Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
+
       if Site.Opposite(Site.Way_In(From => From))=Site.Way_Out(To => To) then
-         Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
          Path.Add(Trj.Route, Site.Get_Point(Site.C));
-      else
-         while (Plc/=Site.Way_Out(To => To)) loop
-            Path.Add(Trj.Route, Site.Get_Point(Plc));
-            Plc := Site.Next(Plc);
-         end loop;
+      elsif Site.Next(Site.Next(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
+         Path.Add(Trj.Route, Site.Get_Point(Site.Next(Site.Way_In(From => From))));
+      elsif Site.Previous(Site.Previous(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
+         Path.Add(Trj.Route, Site.Get_Point(Site.Previous(Site.Way_In(From => From))));
       end if;
       Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
       Path.Add(Trj.Route, Site.Get_Point(Pnt => To));
