@@ -2,7 +2,7 @@ with Adagraph; use Adagraph;
 with Site;
 with Robot;
 with Path;
-with Site;
+with PlaceRandomizer;
 
 
 procedure Main is
@@ -16,13 +16,13 @@ begin
 
    Site.Safely.Draw_Site;
 
-   MyRobot1.Go(From => Site.I1, To   => Site.O2);
-   MyRobot2.Go(From => Site.I2, To   => Site.O4);
+   MyRobot1.Go(From => PlaceRandomizer.Random_Input , To   => PlaceRandomizer.Random_Output );
+   MyRobot2.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
 
-   MyRobot3.Go(From => Site.I3, To   => Site.O6);
+   MyRobot3.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
 
-   MyRobot4.Go(From => Site.I4, To   => Site.O3);
-   MyRobot5.Go(From => Site.I5, To   => Site.O3);
+   MyRobot4.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   MyRobot5.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
 
    Adagraph.Destroy_Graph_Window;
 
