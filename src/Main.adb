@@ -6,23 +6,27 @@ with PlaceRandomizer;
 
 
 procedure Main is
-   MyRobot1: Robot.Object;
-   MyRobot2: Robot.Object(Blue);
-   MyRobot3: Robot.Object(Red);
-   MyRobot4: Robot.Object(Adagraph.Cyan);
-   MyRobot5: Robot.Object(Adagraph.Magenta);
-   MyRobot6: Robot.Object(Adagraph.Yellow);
+
+   type Robot_Point is access Robot.Object;
+   type RobotTable is array(Integer range <>) of Robot_Point;
+
+    Robot_Table: RobotTable(1..6) := (  1 => new Robot.Object,
+                                  2 => new Robot.Object(Blue),
+                                  3 => new Robot.Object(Red),
+                                  4 => new Robot.Object(Adagraph.Cyan),
+                                  5 => new Robot.Object(Adagraph.Magenta),
+                                  6 => new Robot.Object(Adagraph.Yellow));
+
 begin
 
    Site.Safely.Draw_Site;
 
-   MyRobot1.Go(From => PlaceRandomizer.Random_Input , To   => PlaceRandomizer.Random_Output );
-   MyRobot2.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
-
-   MyRobot3.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
-
-   MyRobot4.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
-   MyRobot5.Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   Robot_Table(1).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   Robot_Table(2).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   Robot_Table(3).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   Robot_Table(4).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   Robot_Table(5).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+   Robot_Table(6).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
 
    Adagraph.Destroy_Graph_Window;
 
