@@ -13,6 +13,7 @@ package body Robot.Trajectory is
       Trj.At_End := False;
       Trj.Segment := 1;
       Trj.K := 0.0;
+      Trj.Speed := Speed;
 
       Path.Add(Trj.Route, Site.Get_Point(Pnt => From));
       Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
@@ -24,9 +25,9 @@ package body Robot.Trajectory is
       elsif Site.Previous(Site.Previous(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
          Path.Add(Trj.Route, Site.Get_Point(Site.Previous(Site.Way_In(From => From))));
       end if;
+
       Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
       Path.Add(Trj.Route, Site.Get_Point(Pnt => To));
-      Trj.Speed := Speed;
    end Open;
 
    function X(Trj: in Object) return Float is
