@@ -5,7 +5,7 @@ with Site;
 
 package Robot is
 
-   type State_Type is (Ready, Following);
+   type State_Type is (Ready, Following, Shutdown);
 
    task type Object(Color: Color_Type := Light_Green) is
       entry Go(From: Site.Input_Places; To: Site.Output_Places);

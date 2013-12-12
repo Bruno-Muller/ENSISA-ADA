@@ -9,6 +9,11 @@ package body Robot.Trajectory is
 
    procedure Open(Trj: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
    begin
+      Trj.Route := Path.Null_Path;
+      Trj.At_End := False;
+      Trj.Segment := 1;
+      Trj.K := 0.0;
+
       Path.Add(Trj.Route, Site.Get_Point(Pnt => From));
       Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
 

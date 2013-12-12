@@ -4,6 +4,7 @@ with Robot;
 with Path;
 with PlaceRandomizer;
 with Ada.Text_IO;
+with Ada.Integer_Text_IO;
 
 
 procedure Main is
@@ -27,22 +28,46 @@ begin
 
    Site.Safely.Draw_Site;
 
-   i := 1;
-   --Robot_Table(3).Go(From => Site.I1 , To   => Site.O3 ); --test critique qui me montre le bug...
-   while i <= Robot_Table'Length loop
+   Robot_Table(3).Go(From => Site.I1 , To   => Site.O2 ); --test critique qui me montre le bug...
+
+   for i in 1..Robot_Table'Length loop
       newInput := PlaceRandomizer.Random_Input;
       newOutput := PlaceRandomizer.Random_Output;
       select
          Robot_Table(i).Go(From => newInput , To   => newOutput );
-         Ada.Text_Io.Put_Line("OK");
+         Ada.Text_IO.Put("Robot #");
+         Ada.Integer_Text_IO.Put(i, 1);
+         Ada.Text_IO.Put_Line(" OK");
       or
          delay 0.5;
-         Ada.Text_Io.Put_Line(" pas OK");
-         Robot_Table(i+1).Go(From => newInput, To   => newOutput);
+         Ada.Text_IO.Put("Robot #");
+         Ada.Integer_Text_IO.Put(i);
+         Ada.Text_IO.Put_Line(" not OK");
+         if i=Robot_Table'Length then
+            Ada.Text_IO.Put("Trying with Robot #");
+            Ada.Integer_Text_IO.Put(1, 1);
+            Ada.Text_IO.Put_Line("");
+            Robot_Table(1).Go(From => newInput, To   => newOutput);
+         else
+            Ada.Text_IO.Put("Trying with Robot #");
+            Ada.Integer_Text_IO.Put(i, 1);
+            Ada.Text_IO.Put_Line("");
+            Robot_Table(i+1).Go(From => newInput, To   => newOutput);
+         end if;
       end select;
-      i := i + 1 ;
    end loop ;
 
+
+
+   for i in 1..Robot_Table'Length loop
+      Ada.Text_IO.Put("Shutdown robot #");
+      Ada.Integer_Text_IO.Put(i, 1);
+      Ada.Text_IO.Put_Line("");
+      Robot_Table(i).Shutdown;
+   end loop ;
+
+   Ada.Text_IO.Put_Line("Before Destroy_Graph_Window");
    Adagraph.Destroy_Graph_Window;
+   Ada.Text_IO.Put_Line("After Destroy_Graph_Window");
 
 end Main ;
