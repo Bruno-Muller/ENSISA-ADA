@@ -47,6 +47,8 @@ package body Robot is
       or
          when State=Ready => accept Shutdown do
                State := Ready;
+               Next := Ada.Calendar.Clock;
+               Counter := 0;
             end Shutdown;
       end select;
    end Object;

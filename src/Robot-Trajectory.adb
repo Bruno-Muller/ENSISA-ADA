@@ -82,4 +82,5 @@ package body Robot.Trajectory is
       null;
    end Close;
 
+
 end Robot.Trajectory;
