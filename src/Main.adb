@@ -12,6 +12,9 @@ procedure Main is
 
    i : Integer := 0;
 
+   newInput : Site.Places_Names := PlaceRandomizer.Random_Input;
+   newOutput : Site.Places_Names := PlaceRandomizer.Random_Output;
+
     Robot_Table: RobotTable(1..6) := (  1 => new Robot.Object,
                                   2 => new Robot.Object(Blue),
                                   3 => new Robot.Object(Red),
@@ -25,11 +28,13 @@ begin
 
    i := 1;
    while i <= Robot_Table'Length loop
+      newInput := PlaceRandomizer.Random_Input;
+      newOutput := PlaceRandomizer.Random_Output;
       select
-         Robot_Table(i).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+         Robot_Table(i).Go(From => newInput , To   => newOutput );
       or
          delay 0.5;
-         Robot_Table(i+1).Go(From => PlaceRandomizer.Random_Input, To   => PlaceRandomizer.Random_Output);
+         Robot_Table(i+1).Go(From => newInput, To   => newOutput);
       end select;
       i := i + 1 ;
    end loop ;
