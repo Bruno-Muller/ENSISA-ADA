@@ -39,7 +39,7 @@ begin
          Ada.Integer_Text_IO.Put(i, 1);
          Ada.Text_IO.Put_Line(" OK");
       or
-         delay 0.5;
+         delay 3.5;
          Ada.Text_IO.Put("Robot #");
          Ada.Integer_Text_IO.Put(i);
          Ada.Text_IO.Put_Line(" not OK");
