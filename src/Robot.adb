@@ -38,7 +38,7 @@ package body Robot is
                                          Clr    => Color);
                   delay until Next;
                   Site.Safely.Hide_Robot(Pnt    => Trajectory.XY(Its_Trajectory),
-                                         Radius => Radius)
+                                         Radius => Radius);
                   if Counter=7 then
                      Counter:=0;
                      Mouth_Opened := not Mouth_Opened;
