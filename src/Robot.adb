@@ -8,21 +8,18 @@ package body Robot is
       State: State_Type := Ready;
       Mouth_Opened: Boolean := False;
       Its_Trajectory: Trajectory.Object;
-      FromTemp: Site.Input_Places;
-      ToTemp: Site.Output_Places;
    begin
       loop
          select
             when State=Ready => accept Go(From: Site.Input_Places; To: Site.Output_Places) do
                   State := Following;
-                  FromTemp := From;
-                  ToTemp := To;
+
+                  Trajectory.Open(Trj => Its_Trajectory,
+                                  From => From,
+                                  To => To,
+                                  Speed => 75.0);
                end Go;
 
-               Trajectory.Open(Trj => Its_Trajectory,
-                                  From => FromTemp,
-                                  To => ToTemp,
-                               Speed => 75.0);
 
                Site.Safely.Draw_Path(Pth => Its_Trajectory.Route,
                                      Clr => Color);
@@ -48,6 +45,7 @@ package body Robot is
                   Trajectory.Next(Trj => Its_Trajectory, DeltaT => 0.05);
                end loop;
                State := Ready;
+
          or
             when State=Ready => accept Shutdown do
                   State:=Shutdown;
