@@ -9,8 +9,8 @@ package Site is
    Radius: Float := 200.0;
 
    type Places_Names is (I1, I2, I3, I4, I5, I6,
-                         O1, O2, O3, O4, O5, O6,
                          R1, R2, R3, R4, R5, R6,
+                         O1, O2, O3, O4, O5, O6,
                          C);
    subtype Ring_Places is Places_Names range R1..R6;
    subtype Input_Places is Places_Names range I1..I6;
