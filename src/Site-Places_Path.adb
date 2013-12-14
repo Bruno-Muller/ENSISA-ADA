@@ -1,51 +1,46 @@
 package body Site.Places_Path is
 
    function Open(From: in Site.Input_Places; To: Site.Output_Places) return Places_Path.Object is
+      Path: Places_Path.Object := Null_Places_Path;
    begin
+      Add(Path, From);
+      Add(Path, Site.Way_In(From => From));
 
+      if Site.Opposite(Site.Way_In(From => From))=Site.Way_Out(To => To) then
+         Add(Path, Site.C);
+      elsif Site.Next(Site.Next(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
+         Add(Path, Site.Next(Site.Way_In(From => From)));
+      elsif Site.Previous(Site.Previous(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
+         Add(Path, Site.Previous(Site.Way_In(From => From)));
+      end if;
 
-      -- TODO : something like this:
+      if Site.Way_In(From => From)/=Site.Way_Out(To => To) then
+         Add(Path, Site.Way_Out(To => To));
+      end if;
 
+      Add(Path, To);
 
---        Trj.Route := Path.Null_Path;
---        Trj.At_End := False;
---        Trj.Segment := 1;
---        Trj.K := 0.0;
---        Trj.Speed := Speed;
---
---        Path.Add(Trj.Route, Site.Get_Point(Pnt => From));
---        Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
---
---        if Site.Opposite(Site.Way_In(From => From))=Site.Way_Out(To => To) then
---           Path.Add(Trj.Route, Site.Get_Point(Site.C));
---        elsif Site.Next(Site.Next(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
---           Path.Add(Trj.Route, Site.Get_Point(Site.Next(Site.Way_In(From => From))));
---        elsif Site.Previous(Site.Previous(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
---           Path.Add(Trj.Route, Site.Get_Point(Site.Previous(Site.Way_In(From => From))));
---        end if;
---
---        Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
---        Path.Add(Trj.Route, Site.Get_Point(Pnt => To));
-
-
-
-
-      return Null_Place_Path;
+      return Path;
    end Open;
 
    function At_End(Path: in Site.Places_Path.Object) return Boolean is
    begin
-      return Path.Size>=Path.Actual_Index;
+      return Path.Index>Path.Size;
    end At_End;
 
    function Value(Path: in Site.Places_Path.Object) return Site.Place_Names is
    begin
-      return Path.Values(Path.Actual_Index);
+      return Path.Values(Path.Index);
    end Value;
 
    procedure Next(Path: in out Site.Places_Path.Object) is
    begin
-      Path.Actual_Index := Path.Actual_Index + 1;
+      Path.Index := Path.Index + 1;
    end Next;
+
+   procedure Add(Path: in out Places_Path.Object; Place: in Place_Names) is
+   begin
+      Path := Object'(Size => Path.Size+1, Values => Path.Values & Place, Index => 1);
+   end Add;
 
 end Site.Places_Path;

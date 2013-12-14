@@ -23,7 +23,7 @@ package Site is
    function Previous(Place: Ring_Places) return Ring_Places;
    function Opposite(Place: Ring_Places) return Ring_Places;
    function Get_Point(Pnt: Place_Names) return Path.Point;
-   function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point ;
+   function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point;
 
    function Robot_Intersects(Place: Place_Names; X: Float; Y: Float) return Boolean;
 

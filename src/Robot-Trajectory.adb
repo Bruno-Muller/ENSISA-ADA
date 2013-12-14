@@ -1,4 +1,6 @@
 with Site; use Site;
+with Site.Places_Path;
+with Ada.Text_IO;
 
 package body Robot.Trajectory is
 
@@ -8,6 +10,7 @@ package body Robot.Trajectory is
    end Route;
 
    procedure Open(Trj: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
+      Pth : Site.Places_Path.Object := Site.Places_Path.Open(From => From, To => To);
    begin
       Trj.Route := Path.Null_Path;
       Trj.At_End := False;
@@ -15,22 +18,11 @@ package body Robot.Trajectory is
       Trj.K := 0.0;
       Trj.Speed := Speed;
 
-      Path.Add(Trj.Route, Site.Get_Point(Pnt => From));
-      Path.Add(Trj.Route, Site.Get_Point(Site.Way_In(From => From)));
+      while(not Site.Places_Path.At_End(Pth)) loop
+         Path.Add(Trj.Route, Site.Get_Point(Site.Places_Path.Value(Pth)));
+         Site.Places_Path.Next(Pth);
+      end loop;
 
-      if Site.Opposite(Site.Way_In(From => From))=Site.Way_Out(To => To) then
-         Path.Add(Trj.Route, Site.Get_Point(Site.C));
-      elsif Site.Next(Site.Next(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
-         Path.Add(Trj.Route, Site.Get_Point(Site.Next(Site.Way_In(From => From))));
-      elsif Site.Previous(Site.Previous(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
-         Path.Add(Trj.Route, Site.Get_Point(Site.Previous(Site.Way_In(From => From))));
-      end if;
-
-      if Site.Way_In(From => From)/=Site.Way_Out(To => To) then
-         Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
-      end if;
-
-      Path.Add(Trj.Route, Site.Get_Point(Pnt => To));
    end Open;
 
    function X(Trj: in Object) return Float is

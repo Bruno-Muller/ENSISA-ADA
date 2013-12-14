@@ -2,7 +2,7 @@ package Site.Places_Path is
 
    type Object is private;
 
-   Null_Place_Path: constant Object;
+   Null_Places_Path: constant Object;
 
    type Places is array (Natural range <>) of Site.Place_Names;
 
@@ -14,13 +14,15 @@ package Site.Places_Path is
 private
 
    subtype Count is Natural range 0..50;
-   subtype Index is Natural range 0..50;
+   subtype Cursor is Natural range 0..50;
 
    type Object (Size: Count := 0) is record
-      Values: Places(1..Size);
-      Actual_Index: Index;
+      Values: Places (1..Size);
+      Index: Cursor :=0;
    end record;
 
-   Null_Place_Path : constant Object := Object'(Size => 0, Values => <>, Actual_Index => 0);
+   procedure Add(Path: in out Places_Path.Object; Place: in Place_Names);
+
+   Null_Places_Path : constant Object := Object'(Size => 0, Values => <>, Index => 0);
 
 end Site.Places_Path;
