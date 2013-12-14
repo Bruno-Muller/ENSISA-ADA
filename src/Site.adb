@@ -191,4 +191,6 @@ begin
    Adagraph.Set_Window_Title("Chevalier - Muller"); --"PACMAN");
    Adagraph.Clear_Window;
 
+   Site.Safely.Draw_Site;
+
 end Site;
