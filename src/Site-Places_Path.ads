@@ -11,6 +11,7 @@ package Site.Places_Path is
    function Value(Path: in Site.Places_Path.Object) return Site.Place_Names;
    procedure Next(Path: in out Site.Places_Path.Object);
    procedure Start(Path: in out Site.Places_Path.Object);
+   function Values(Path: in Site.Places_Path.Object) return Places;
 
 private
 

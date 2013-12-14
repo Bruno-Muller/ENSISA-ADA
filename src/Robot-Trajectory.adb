@@ -10,7 +10,7 @@ package body Robot.Trajectory is
    end Route;
 
    procedure Open(Trj: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
-      Pth : Site.Places_Path.Object := Site.Places_Path.Open(From => From, To => To);
+      Pth : Site.Places_Path.Places := Site.Places_Path.Values(Site.Places_Path.Open(From => From, To => To));
    begin
       Trj.Route := Path.Null_Path;
       Trj.At_End := False;
@@ -18,9 +18,8 @@ package body Robot.Trajectory is
       Trj.K := 0.0;
       Trj.Speed := Speed;
 
-      while(not Site.Places_Path.At_End(Pth)) loop
-         Path.Add(Trj.Route, Site.Get_Point(Site.Places_Path.Value(Pth)));
-         Site.Places_Path.Next(Pth);
+      for P in Pth'First..Pth'Last loop
+         Path.Add(Trj.Route, Site.Get_Point(Pth(P)));
       end loop;
 
    end Open;

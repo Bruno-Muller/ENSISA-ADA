@@ -43,6 +43,11 @@ package body Site.Places_Path is
       Path.Index := 1;
    end Start;
 
+   function Values(Path: in Site.Places_Path.Object) return Places is
+   begin
+      return Path.Values;
+   end Values;
+
    procedure Add(Path: in out Places_Path.Object; Place: in Place_Names) is
    begin
       Path := Object'(Size => Path.Size+1, Values => Path.Values & Place, Index => 1);
