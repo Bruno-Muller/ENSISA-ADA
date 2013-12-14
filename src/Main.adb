@@ -13,8 +13,6 @@ procedure Main is
 
    type Robot_Table is array(Integer range <>) of access Robot.Object;
 
-   I : Integer := 0;
-
    Randomized_Input : Site.Input_Places := Place_Randomizer.Random_Input;
    Randomized_Output : Site.Output_Places := Place_Randomizer.Random_Output;
 
