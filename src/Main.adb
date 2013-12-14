@@ -6,6 +6,7 @@ with Place_Randomizer;
 with Ada.Text_IO;
 with Ada.Integer_Text_IO;
 
+with Places_Names_Resource_Pool;
 
 procedure Main is
 
@@ -16,56 +17,42 @@ procedure Main is
    Randomized_Input : Site.Places_Names := Place_Randomizer.Random_Input;
    Randomized_Output : Site.Places_Names := Place_Randomizer.Random_Output;
 
-
    My_Robot_Table: Robot_Table(1..6) := (new Robot.Object,
                      new Robot.Object(Blue),
                      new Robot.Object(Red),
                      new Robot.Object(Adagraph.Cyan),
                      new Robot.Object(Adagraph.Magenta),
-                     new Robot.Object(Adagraph.Yellow));
+                                         new Robot.Object(Adagraph.Yellow));
+
+   Request1: Places_Names_Resource_Pool.Request_Map := (Site.I1 | Site.R1 | Site.R2 | Site. O2 | Site.C => True, others => False);
+   Request2: Places_Names_Resource_Pool.Request_Map := (Site.I2 | Site.R1 | Site.R2 | Site. O1 | Site.C => True, others => False);
 
 begin
 
-   My_Robot_Table(3).Go(From => Site.I1 , To   => Site.O2 );
 
-   for I in 1..My_Robot_Table'Length loop
-      Randomized_Input := Place_Randomizer.Random_Input;
-      Randomized_Output := Place_Randomizer.Random_Output;
-      select
-         My_Robot_Table(I).Go(From => Randomized_Input , To   => Randomized_Output );
-         Ada.Text_IO.Put("Robot #");
-         Ada.Integer_Text_IO.Put(I, 1);
-         Ada.Text_IO.Put_Line(" OK");
-      or
-         delay 3.5;
-         Ada.Text_IO.Put("Robot #");
-         Ada.Integer_Text_IO.Put(I);
-         Ada.Text_IO.Put_Line(" not OK");
-         if I=My_Robot_Table'Length then
-            Ada.Text_IO.Put("Trying with Robot #");
-            Ada.Integer_Text_IO.Put(1, 1);
-            Ada.Text_IO.Put_Line("");
-            My_Robot_Table(1).Go(From => Randomized_Input, To   => Randomized_Output);
-         else
-            Ada.Text_IO.Put("Trying with Robot #");
-            Ada.Integer_Text_IO.Put(I, 1);
-            Ada.Text_IO.Put_Line("");
-            My_Robot_Table(I+1).Go(From => Randomized_Input, To   => Randomized_Output);
-         end if;
-      end select;
-   end loop ;
+--     My_Robot_Table(3).Go(From => Site.I1 , To   => Site.O2 );
+--
+--     for I in 1..My_Robot_Table'Length loop
+--        Randomized_Input := Place_Randomizer.Random_Input;
+--        Randomized_Output := Place_Randomizer.Random_Output;
+--        select
+--           My_Robot_Table(I).Go(From => Randomized_Input , To   => Randomized_Output );
+--        or
+--           delay 3.5;
+--           if I=My_Robot_Table'Length then
+--              My_Robot_Table(1).Go(From => Randomized_Input, To   => Randomized_Output);
+--           else
+--              My_Robot_Table(I+1).Go(From => Randomized_Input, To   => Randomized_Output);
+--           end if;
+--        end select;
+--     end loop ;
+--
+--
+--
+--     for I in 1..My_Robot_Table'Length loop
+--        My_Robot_Table(I).Shutdown;
+--     end loop ;
 
-
-
-   for I in 1..My_Robot_Table'Length loop
-      Ada.Text_IO.Put("Shutdown robot #");
-      Ada.Integer_Text_IO.Put(I, 1);
-      Ada.Text_IO.Put_Line("");
-      My_Robot_Table(I).Shutdown;
-   end loop ;
-
-   Ada.Text_IO.Put_Line("Before Destroy_Graph_Window");
    Adagraph.Destroy_Graph_Window;
-   Ada.Text_IO.Put_Line("After Destroy_Graph_Window");
 
 end Main ;
