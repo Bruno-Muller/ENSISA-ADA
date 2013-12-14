@@ -26,7 +26,10 @@ package body Robot.Trajectory is
          Path.Add(Trj.Route, Site.Get_Point(Site.Previous(Site.Way_In(From => From))));
       end if;
 
-      Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
+      if Site.Way_In(From => From)/=Site.Way_Out(To => To) then
+         Path.Add(Trj.Route, Site.Get_Point(Site.Way_Out(To => To)));
+      end if;
+
       Path.Add(Trj.Route, Site.Get_Point(Pnt => To));
    end Open;
 
