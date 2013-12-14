@@ -1,11 +1,11 @@
-with Adagraph; use Adagraph;
+with Adagraph;
 with Site;
 with Robot;
 with Path;
-with Place_Randomizer;
 with Ada.Text_IO;
 with Ada.Integer_Text_IO;
 with Ada.Numerics.Discrete_Random;
+with Place_Randomizer;
 
 with Places_Names_Resource_Pool;
 
@@ -15,22 +15,18 @@ procedure Main is
 
    I : Integer := 0;
 
-   Randomized_Input : Site.Places_Names := Place_Randomizer.Random_Input;
-   Randomized_Output : Site.Places_Names := Place_Randomizer.Random_Output;
+   Randomized_Input : Site.Input_Places := Place_Randomizer.Random_Input;
+   Randomized_Output : Site.Output_Places := Place_Randomizer.Random_Output;
 
    My_Robot_Table: Robot_Table(1..6) := (new Robot.Object,
-                     new Robot.Object(Blue),
-                     new Robot.Object(Red),
-                     new Robot.Object(Adagraph.Cyan),
-                     new Robot.Object(Adagraph.Magenta),
+                                         new Robot.Object(Adagraph.Blue),
+                                         new Robot.Object(Adagraph.Red),
+                                         new Robot.Object(Adagraph.Cyan),
+                                         new Robot.Object(Adagraph.Magenta),
                                          new Robot.Object(Adagraph.Yellow));
 
    Request1: Places_Names_Resource_Pool.Request_Map := (Site.I1 | Site.R1 | Site.R2 | Site. O2 | Site.C => True, others => False);
    Request2: Places_Names_Resource_Pool.Request_Map := (Site.I2 | Site.R1 | Site.R2 | Site. O1 | Site.C => True, others => False);
-
-
-   package Input_Randomizer is new Ada.Numerics.Discrete_Random(Site.Input_Places);
-   package Output_Randomizer is new Ada.Numerics.Discrete_Random(Site.Output_Places);
 
 
 begin
