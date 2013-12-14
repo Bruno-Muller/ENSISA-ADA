@@ -9,7 +9,7 @@ package body Place_Randomizer is
 
 
 
-   function Random_Input return Places_Names is
+   function Random_Input return Site.Input_Places is
    begin
 
       case  Random(G) is
@@ -22,7 +22,7 @@ package body Place_Randomizer is
       end case;
    end Random_Input ;
 
-   function Random_Output return Places_Names is
+   function Random_Output return Site.Output_Places is
    begin
       case Random(G) is
          when 1 => return Site.O1;

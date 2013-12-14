@@ -2,35 +2,34 @@ package body Generic_Resource_Pool is
 
    procedure Acquire(Map : in Request_Map) is
    begin
-      null;
+      null; -- TODO
    end Acquire;
 
    procedure Acquire(Id: in Resource_Id) is
    begin
-      null;
+      null; -- TODO
    end Acquire;
 
    procedure Release(Map: in Request_Map) is
    begin
-      null;
+      null; -- TODO
    end Release;
 
    procedure Release(Id: in Resource_Id) is
    begin
-      null;
+      null; -- TODO
    end Release;
-
 
    protected body Resource is
 
       procedure Release is
       begin
-         null;
+         Acquired := False;
       end Release;
 
-      entry Acquire when true is
+      entry Acquire when not Acquired is
       begin
-         null;
+         Acquired := True;
       end Acquire;
 
    end Resource;

@@ -12,8 +12,12 @@ package Generic_Resource_Pool is
    procedure Release(Map: in Request_Map);
    procedure Release(Id: in Resource_Id);
 
+
+
 private
+   Acquired: Boolean := False;
    protected Resource is
+
       entry Acquire;
       procedure Release;
    end;
