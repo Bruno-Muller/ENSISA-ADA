@@ -10,6 +10,7 @@ package Site.Places_Path is
    function At_End(Path: in Site.Places_Path.Object) return Boolean;
    function Value(Path: in Site.Places_Path.Object) return Site.Place_Names;
    procedure Next(Path: in out Site.Places_Path.Object);
+   procedure Start(Path: in out Site.Places_Path.Object);
 
 private
 
