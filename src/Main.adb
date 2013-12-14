@@ -29,6 +29,9 @@ procedure Main is
 
 begin
 
+
+
+
    Place_Resource_Pool.Acquire(Map => Request1);
    Place_Resource_Pool.Release(Site.I1);
    Place_Resource_Pool.Release(Site.R1);
@@ -42,8 +45,6 @@ begin
    Place_Resource_Pool.Release(Site.C);
    Place_Resource_Pool.Release(Site.R1);
    Place_Resource_Pool.Release(Site.O1);
-
-
 
 
    My_Robot_Table(3).Go(From => Site.I1 , To   => Site.O2 );

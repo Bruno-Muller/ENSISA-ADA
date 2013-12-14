@@ -93,6 +93,12 @@ package body Site is
                          Y => Ctr.Y + R * Sin(Angle/180.0*3.14159265));
    end Get_Point;
 
+   function Robot_Intersects(Place: Place_Names; X: Float; Y: Float) return Boolean is
+      Pnt: Path.Point := Get_Point(Pnt => Place);
+   begin
+      return Sqrt((Pnt.X-X)**2 + (Pnt.Y-Y)**2)<=50.0;
+   end Robot_Intersects;
+
    protected body Safely is
 
       procedure Draw_Site(Clr: in Color_Type := Dark_Gray) is

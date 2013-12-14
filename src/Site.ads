@@ -25,6 +25,8 @@ package Site is
    function Get_Point(Pnt: Place_Names) return Path.Point;
    function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point ;
 
+   function Robot_Intersects(Place: Place_Names; X: Float; Y: Float) return Boolean;
+
    protected Safely is
       procedure Draw_Site(Clr: in Color_Type := Dark_Gray);
       procedure Draw_Path (Pth: in Path.Object; Clr: in Color_Type := Light_Green) ;

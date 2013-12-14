@@ -1,6 +1,3 @@
-with Ada.Text_IO;
-with Ada.Integer_Text_IO;
-
 package body Generic_Resource_Pool is
 
    procedure Acquire(Map : in Request_Map) is
@@ -15,7 +12,6 @@ package body Generic_Resource_Pool is
    procedure Acquire(Id: in Resource_Id) is
    begin
       Resource_Pool(Id).Acquire;
-      Ada.Text_IO.Put_Line("Acquire");
    end Acquire;
 
    procedure Release(Map: in Request_Map) is
@@ -30,7 +26,6 @@ package body Generic_Resource_Pool is
    procedure Release(Id: in Resource_Id) is
    begin
       Resource_Pool(Id).Release;
-      Ada.Text_IO.Put_Line("Release");
    end Release;
 
    protected body Resource is
