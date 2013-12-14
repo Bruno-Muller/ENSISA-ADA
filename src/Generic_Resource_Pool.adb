@@ -7,7 +7,7 @@ package body Generic_Resource_Pool is
 
    procedure Acquire(Id: in Resource_Id) is
    begin
-      null; -- TODO
+      Resource_Pool(Id).Acquire;
    end Acquire;
 
    procedure Release(Map: in Request_Map) is
@@ -17,7 +17,7 @@ package body Generic_Resource_Pool is
 
    procedure Release(Id: in Resource_Id) is
    begin
-      null; -- TODO
+      Resource_Pool(Id).Release;
    end Release;
 
    protected body Resource is
