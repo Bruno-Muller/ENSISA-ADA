@@ -60,7 +60,7 @@ package body Site is
       end case;
    end Opposite;
 
-   function Get_Point(Pnt: Places_Names) return Path.Point is
+   function Get_Point(Pnt: Place_Names) return Path.Point is
    begin
       case Pnt is
          when C => return Center;

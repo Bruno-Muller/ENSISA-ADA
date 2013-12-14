@@ -7,7 +7,7 @@ with Ada.Integer_Text_IO;
 with Ada.Numerics.Discrete_Random;
 with Place_Randomizer;
 
-with Places_Names_Resource_Pool;
+with Place_Resource_Pool;
 
 procedure Main is
 
@@ -25,25 +25,25 @@ procedure Main is
                                          new Robot.Object(Adagraph.Magenta),
                                          new Robot.Object(Adagraph.Yellow));
 
-   Request1: Places_Names_Resource_Pool.Request_Map := (Site.I1 | Site.R1 | Site.R2 | Site. O2 | Site.C => True, others => False);
-   Request2: Places_Names_Resource_Pool.Request_Map := (Site.I2 | Site.R1 | Site.R2 | Site. O1 | Site.C => True, others => False);
+   Request1: Place_Resource_Pool.Request_Map := (Site.I1 | Site.R1 | Site.R2 | Site. O2 | Site.C => True, others => False);
+   Request2: Place_Resource_Pool.Request_Map := (Site.I2 | Site.R1 | Site.R2 | Site. O1 | Site.C => True, others => False);
 
 
 begin
 
-   Places_Names_Resource_Pool.Acquire(Map => Request1);
-   Places_Names_Resource_Pool.Release(Site.I1);
-   Places_Names_Resource_Pool.Release(Site.R1);
-   Places_Names_Resource_Pool.Release(Site.C);
-   Places_Names_Resource_Pool.Release(Site.R2);
-   Places_Names_Resource_Pool.Release(Site.O2);
+   Place_Resource_Pool.Acquire(Map => Request1);
+   Place_Resource_Pool.Release(Site.I1);
+   Place_Resource_Pool.Release(Site.R1);
+   Place_Resource_Pool.Release(Site.C);
+   Place_Resource_Pool.Release(Site.R2);
+   Place_Resource_Pool.Release(Site.O2);
 
-   Places_Names_Resource_Pool.Acquire(Map => Request2);
-   Places_Names_Resource_Pool.Release(Site.I2);
-   Places_Names_Resource_Pool.Release(Site.R2);
-   Places_Names_Resource_Pool.Release(Site.C);
-   Places_Names_Resource_Pool.Release(Site.R1);
-   Places_Names_Resource_Pool.Release(Site.O1);
+   Place_Resource_Pool.Acquire(Map => Request2);
+   Place_Resource_Pool.Release(Site.I2);
+   Place_Resource_Pool.Release(Site.R2);
+   Place_Resource_Pool.Release(Site.C);
+   Place_Resource_Pool.Release(Site.R1);
+   Place_Resource_Pool.Release(Site.O1);
 
 
 
