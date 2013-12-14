@@ -14,37 +14,43 @@ package body Robot.Trajectory.Safe is
       Sf_Trj.Plc := Plc;
       Sf_Trj.From := From;
       Sf_Trj.To := To;
+      Sf_Trj.First_Next := True;
 
-      for P in Pth'First..Pth'Last loop
-            Request(Pth(P)) := True;
-      end loop;
-
-      Pool.Acquire(Request);
+--        for P in Pth'First..Pth'Last loop
+--              Request(Pth(P)) := True;
+--        end loop;
+--
+--        Pool.Acquire(Request);
+Pool.Acquire(From);
 
       Robot.Trajectory.Open(Trj   => Sf_Trj.Trj,
                             From  => From,
                             To    => To,
-                            Speed => Speed);
+                            Speed => 0.0);
 
       Sf_Trj.In_Place := True;
 
    end Open;
 
    procedure Next(Sf_Trj: in out Object; DeltaT: in Float) is
+      Pth: Site.Places_Path.Places := Site.Places_Path.Values(Sf_Trj.Plc);
+      Request: Pool.Request_Map := (others => False);
       Pnt: Path.Point;
    begin
-      --        if Site.Places_Path.Value(Sf_Trj.Plc)=Sf_Trj.From then
-      --           Ada.Text_IO.Put_Line("Input_Place");
-      --
-      --           for P in Pth'First..Pth'Last loop
-      --              if Pth(P)/=Sf_Trj.From then
-      --                 Request(Pth(P)) := True;
-      --              end if;
-      --           end loop;
-      --           Pool.Acquire(Request);
-      --
-      --           Site.Places_Path.Start(Sf_Trj.Plc);
-      --        end if;
+            if Sf_Trj.First_Next=True then
+               Ada.Text_IO.Put_Line("Input_Place");
+
+               for P in Pth'First..Pth'Last loop
+                  if Pth(P)/=Sf_Trj.From then
+                     Request(Pth(P)) := True;
+                  end if;
+               end loop;
+         Pool.Acquire(Request);
+         Ada.Text_IO.Put_Line("Acquired");
+         Sf_Trj.First_Next := False;
+         Sf_Trj.Trj.Speed := 75.0;
+
+            end if;
 
 
 
@@ -65,9 +71,14 @@ package body Robot.Trajectory.Safe is
    end Next;
 
    procedure Close(Sf_Trj: in out Object) is
+      Pth: Site.Places_Path.Places := Site.Places_Path.Values(Sf_Trj.Plc);
       Request: Pool.Request_Map := (others => False);
    begin
-      Pool.Release(Sf_Trj.To);
+            for P in Pth'First..Pth'Last loop
+            Request(Pth(P)) := True;
+      end loop;
+      Pool.Release(Request);
+
       Ada.Text_IO.Put_Line("close");
    end Close;
 

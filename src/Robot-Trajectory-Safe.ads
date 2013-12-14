@@ -19,6 +19,7 @@ private
       Trj: Robot.Trajectory.Object;
       Plc: Site.Places_Path.Object;
       In_Place: Boolean := False;
+      First_Next : Boolean := True;
    end record;
 
    package Pool is new Generic_Resource_Pool(Resource_Id => Site.Place_Names);

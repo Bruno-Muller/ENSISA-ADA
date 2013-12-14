@@ -173,7 +173,7 @@ package body Site is
          Theta: Float;
       begin
          Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Clr, Filled => Fill);
-         if false then --Mouth_Opened then
+         if Mouth_Opened then
             for I in -10..10 loop
                Theta := Float(I*3)/180.0*3.14159265;
                Draw_Line(X1 => Integer(Pnt.X),

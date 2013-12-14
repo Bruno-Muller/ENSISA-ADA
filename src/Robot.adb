@@ -1,5 +1,6 @@
 with Robot.Trajectory;
 with Robot.Trajectory.Safe;
+with Ada.Text_IO;
 
 package body Robot is
 
@@ -20,15 +21,7 @@ package body Robot is
                                   To => To,
                                   Speed => 75.0);
                end Go;
-
-         or
-            when State=Ready => accept Shutdown do
-                  State:=Shutdown;
-               end Shutdown;
-         end select;
-
-         exit when State=Shutdown;
-
+               Ada.Text_IO.Put_Line("Begin Go");
          Site.Safely.Draw_Path(Pth => Trajectory.Safe.Get_Trajectory(Its_Trajectory).Route,
                                Clr => Color);
 
@@ -56,7 +49,22 @@ package body Robot is
          Trajectory.Safe.Close(Sf_Trj => Its_Trajectory);
 
          State := Ready;
+	Ada.Text_IO.Put_Line("End Go");
 
+         or
+            when State=Ready => accept Shutdown do
+                  State:=Shutdown;
+               end Shutdown;
+                	Ada.Text_IO.Put_Line("Begin Shutdown");
+
+	Ada.Text_IO.Put_Line("End Shutdown");
+         end select;
+
+
+         exit when State=Shutdown;
+	Ada.Text_IO.Put_Line("Begin Robot");
+
+	Ada.Text_IO.Put_Line("End Robot");
       end loop;
    end Object;
 
