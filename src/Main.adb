@@ -2,19 +2,19 @@ with Adagraph; use Adagraph;
 with Site;
 with Robot;
 with Path;
-with PlaceRandomizer;
+with Place_Randomizer;
 with Ada.Text_IO;
 with Ada.Integer_Text_IO;
 
 
 procedure Main is
 
-   type Robot_Table is array(Integer range <>) of access Robot.Object; -- access Robot.Object;
+   type Robot_Table is array(Integer range <>) of access Robot.Object;
 
    I : Integer := 0;
 
-   Randomized_Input : Site.Places_Names := PlaceRandomizer.Random_Input;
-   Randomized_Output : Site.Places_Names := PlaceRandomizer.Random_Output;
+   Randomized_Input : Site.Places_Names := Place_Randomizer.Random_Input;
+   Randomized_Output : Site.Places_Names := Place_Randomizer.Random_Output;
 
 
    My_Robot_Table: Robot_Table(1..6) := (new Robot.Object,
@@ -24,14 +24,13 @@ procedure Main is
                      new Robot.Object(Adagraph.Magenta),
                      new Robot.Object(Adagraph.Yellow));
 
-
 begin
 
    My_Robot_Table(3).Go(From => Site.I1 , To   => Site.O2 );
 
    for I in 1..My_Robot_Table'Length loop
-      Randomized_Input := PlaceRandomizer.Random_Input;
-      Randomized_Output := PlaceRandomizer.Random_Output;
+      Randomized_Input := Place_Randomizer.Random_Input;
+      Randomized_Output := Place_Randomizer.Random_Output;
       select
          My_Robot_Table(I).Go(From => Randomized_Input , To   => Randomized_Output );
          Ada.Text_IO.Put("Robot #");

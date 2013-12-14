@@ -1,7 +1,7 @@
 with Ada.Numerics.Discrete_Random;
 with Site;
 
-package body PlaceRandomizer is
+package body Place_Randomizer is
 
    package Randomisation is new Ada.Numerics.Discrete_Random(Interval);
    use Randomisation;
@@ -37,4 +37,4 @@ package body PlaceRandomizer is
 begin
    reset(G);
 
-end PlaceRandomizer;
+end Place_Randomizer;
