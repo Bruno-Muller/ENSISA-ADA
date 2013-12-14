@@ -5,6 +5,8 @@ generic
 
 package Generic_Resource_Pool is
 
+   --type Resource is private;
+
    type Request_Map is array(Resource_Id) of Boolean;
 
    procedure Acquire(Map : in Request_Map);
@@ -12,14 +14,13 @@ package Generic_Resource_Pool is
    procedure Release(Map: in Request_Map);
    procedure Release(Id: in Resource_Id);
 
-
-
 private
-   Acquired: Boolean := False;
-   protected Resource is
 
+   protected Resource is
       entry Acquire;
       procedure Release;
+   private
+      Acquired: Boolean := False;
    end;
 
 end Generic_Resource_Pool;
