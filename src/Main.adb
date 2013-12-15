@@ -17,11 +17,11 @@ procedure Main is
    Randomized_Output : Site.Output_Places := Place_Randomizer.Random_Output;
 
    My_Robot_Table: Robot_Table(1..6) := (new Robot.Object,
-                                         new Robot.Object(Adagraph.Blue),
-                                         new Robot.Object(Adagraph.Red),
-                                         new Robot.Object(Adagraph.Cyan),
-                                         new Robot.Object(Adagraph.Magenta),
-                                         new Robot.Object(Adagraph.Yellow));
+                                         new Robot.Object(1, null, Adagraph.Blue),
+                                         new Robot.Object(2, null, Adagraph.Red),
+                                         new Robot.Object(3, null,  Adagraph.Cyan),
+                                         new Robot.Object(4, null, Adagraph.Magenta),
+                                         new Robot.Object(5, null, Adagraph.Yellow));
 
    Request1: Place_Resource_Pool.Request_Map := (Site.I1 | Site.R1 | Site.R2 | Site. O2 | Site.C => True, others => False);
    Request2: Place_Resource_Pool.Request_Map := (Site.I2 | Site.R1 | Site.R2 | Site. O1 | Site.C => True, others => False);

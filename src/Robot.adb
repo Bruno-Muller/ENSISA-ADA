@@ -67,6 +67,10 @@ package body Robot is
                Trajectory.Safe.Close(Safe_Trajectory => Its_Trajectory);
 
                State := Ready;
+
+               if Mission_Done/=null then
+                  Mission_Done.Put(Id);
+               end if;
          or
             when State=Ready => accept Shutdown do
                   State:=Shutdown;

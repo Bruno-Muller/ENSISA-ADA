@@ -13,9 +13,9 @@ private
    type Robot_Table is array(Integer range <>) of access Robot.Object;
 
    Agency_Robot_Table: Robot_Table(1..6) := (new Robot.Object,
-                                         new Robot.Object(Adagraph.Blue),
-                                         new Robot.Object(Adagraph.Red),
-                                         new Robot.Object(Adagraph.Cyan),
-                                         new Robot.Object(Adagraph.Magenta),
-                                         new Robot.Object(Adagraph.Yellow));
+                                             new Robot.Object(1, null, Adagraph.Blue),
+                                             new Robot.Object(2, null, Adagraph.Red),
+                                             new Robot.Object(3, null,  Adagraph.Cyan),
+                                             new Robot.Object(4, null, Adagraph.Magenta),
+                                             new Robot.Object(5, null, Adagraph.Yellow));
 end Agency;
