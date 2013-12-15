@@ -1,9 +1,11 @@
 package body Agency is
 
-   procedure Handle_Transfert(From: Site.Input_Places; To: Site.Output_Places) is
+   procedure Handle_Transfer(From: Site.Input_Places; To: Site.Output_Places) is
    begin
-      null;
-   end Handle_Transfert;
+
+      null; -- todo
+
+   end Handle_Transfer;
 
    procedure Shutdown is
    begin

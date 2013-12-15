@@ -4,7 +4,7 @@ with Site;
 
 package Agency is
 
-   procedure Handle_Transfert(From: Site.Input_Places; To: Site.Output_Places);
+   procedure Handle_Transfer(From: Site.Input_Places; To: Site.Output_Places);
    procedure Shutdown;
 
 
