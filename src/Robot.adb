@@ -27,7 +27,6 @@ package body Robot is
                                       Mouth_Opened    => True,
                                       Clr    => Color);
 
-
                Next := Ada.Calendar.Clock;
                while Trajectory.Safe.Is_On_Departure(Its_Trajectory) loop
                   Next := Next + 0.05;
@@ -41,22 +40,28 @@ package body Robot is
                Next := Ada.Calendar.Clock;
                while not Trajectory.At_End(Trajectory.Safe.Get_Trajectory(Its_Trajectory)) loop
                   Next := Next + 0.05;
-
                   Site.Safely.Draw_Robot(Pnt    =>  Trajectory.XY(Trajectory.Safe.Get_Trajectory(Its_Trajectory)),
                                          Radius => Radius,
                                          Direction    => Trajectory.Direction(Trajectory.Safe.Get_Trajectory(Its_Trajectory)),
                                          Mouth_Opened    => Mouth_Opened,
                                          Clr    => Color);
-                  delay until Next;
-                  Site.Safely.Hide_Robot(Pnt    => Trajectory.XY(Trajectory.Safe.Get_Trajectory(Its_Trajectory)),
-                                         Radius => Radius);
+
+
+
                   if Counter=7 then
                      Counter:=0;
                      Mouth_Opened := not Mouth_Opened;
                   end if;
 
                   Counter := Counter + 1;
+
+                  delay until Next;
+                  Site.Safely.Hide_Robot(Pnt    => Trajectory.XY(Trajectory.Safe.Get_Trajectory(Its_Trajectory)),
+                                         Radius => Radius);
+
                   Trajectory.Safe.Next(Safe_Trajectory => Its_Trajectory, DeltaT => 0.05);
+
+
                end loop;
 
                Trajectory.Safe.Close(Safe_Trajectory => Its_Trajectory);
