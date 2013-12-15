@@ -1,91 +1,67 @@
 with Site; use Site;
 with Site.Places_Path;
 with Place_Resource_Pool;
-with Ada.Text_IO;
 
 package body Robot.Trajectory.Safe is
 
-
-   procedure Open(Sf_Trj: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
-      Plc: Site.Places_Path.Object := Site.Places_Path.Open(From => From, To => To);
-      Pth: Site.Places_Path.Places := Site.Places_Path.Values(Plc);
-      Request: Pool.Request_Map := (others => False);
+   procedure Open(Safe_Trajectory: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
    begin
-      Sf_Trj.Plc := Plc;
-      Sf_Trj.From := From;
-      Sf_Trj.To := To;
-      Sf_Trj.First_Next := True;
+      Safe_Trajectory.Place_Path_Object := Site.Places_Path.Open(From => From, To => To);
+      Safe_Trajectory.From := From;
+      Safe_Trajectory.To := To;
+      Safe_Trajectory.On_Departure := True;
+      Safe_Trajectory.In_Place := True;
 
---        for P in Pth'First..Pth'Last loop
---              Request(Pth(P)) := True;
---        end loop;
---
---        Pool.Acquire(Request);
-Pool.Acquire(From);
+      Pool.Acquire(From);
 
-      Robot.Trajectory.Open(Trj   => Sf_Trj.Trj,
+      Robot.Trajectory.Open(Trajectory_Object => Safe_Trajectory.Trajectory_Object,
                             From  => From,
                             To    => To,
-                            Speed => 0.0);
-
-      Sf_Trj.In_Place := True;
-
+                            Speed => Speed);
    end Open;
 
-   procedure Next(Sf_Trj: in out Object; DeltaT: in Float) is
-      Pth: Site.Places_Path.Places := Site.Places_Path.Values(Sf_Trj.Plc);
+   procedure Next(Safe_Trajectory: in out Object; DeltaT: in Float) is
+      Pth: Site.Places_Path.Places := Site.Places_Path.Values(Safe_Trajectory.Place_Path_Object);
       Request: Pool.Request_Map := (others => False);
       Pnt: Path.Point;
    begin
-            if Sf_Trj.First_Next=True then
-               Ada.Text_IO.Put_Line("Input_Place");
-
-               for P in Pth'First..Pth'Last loop
-                  if Pth(P)/=Sf_Trj.From then
-                     Request(Pth(P)) := True;
-                  end if;
-               end loop;
-         Pool.Acquire(Request);
-         Ada.Text_IO.Put_Line("Acquired");
-         Sf_Trj.First_Next := False;
-         Sf_Trj.Trj.Speed := 75.0;
-
+      if Safe_Trajectory.On_Departure=True then
+         for P in Pth'First..Pth'Last loop
+            if Pth(P)/=Safe_Trajectory.From then
+               Request(Pth(P)) := True;
             end if;
+         end loop;
+         Pool.Acquire(Request);
+         Safe_Trajectory.On_Departure := False;
+      end if;
 
-
-
-      Robot.Trajectory.Next(Trj    => Sf_Trj.Trj,
+      Robot.Trajectory.Next(Trajectory_Object => Safe_Trajectory.Trajectory_Object,
                             DeltaT => DeltaT);
 
-      Pnt := Robot.Trajectory.XY(Sf_Trj.Trj);
-
-      if not Site.Robot_Intersects(Site.Places_Path.Value(Sf_Trj.Plc),Pnt.X, Pnt.Y) and Sf_Trj.In_Place then
-         Sf_Trj.In_Place := False;
-         Pool.Release(Site.Places_Path.Value(Sf_Trj.Plc));
-         Site.Places_Path.Next(Sf_Trj.Plc);
-         Ada.Text_IO.Put_Line("next");
-      elsif Site.Robot_Intersects(Site.Places_Path.Value(Sf_Trj.Plc),Pnt.X, Pnt.Y) and not Sf_Trj.In_Place then
-         Sf_Trj.In_Place := True;
+      Pnt := Robot.Trajectory.XY(Safe_Trajectory.Trajectory_Object);
+      if not Site.Robot_Intersects(Site.Places_Path.Value(Safe_Trajectory.Place_Path_Object),Pnt.X, Pnt.Y) and Safe_Trajectory.In_Place then
+         Safe_Trajectory.In_Place := False;
+         Pool.Release(Site.Places_Path.Value(Safe_Trajectory.Place_Path_Object));
+         Site.Places_Path.Next(Safe_Trajectory.Place_Path_Object);
+      elsif Site.Robot_Intersects(Site.Places_Path.Value(Safe_Trajectory.Place_Path_Object),Pnt.X, Pnt.Y) and not Safe_Trajectory.In_Place then
+         Safe_Trajectory.In_Place := True;
       end if;
 
    end Next;
 
-   procedure Close(Sf_Trj: in out Object) is
-      Pth: Site.Places_Path.Places := Site.Places_Path.Values(Sf_Trj.Plc);
-      Request: Pool.Request_Map := (others => False);
+   procedure Close(Safe_Trajectory: in out Object) is
    begin
-            for P in Pth'First..Pth'Last loop
-            Request(Pth(P)) := True;
-      end loop;
-      Pool.Release(Request);
-
-      Ada.Text_IO.Put_Line("close");
+      Pool.Release(Safe_Trajectory.To);
    end Close;
 
-   function Get_Trajectory(Sf_Trj: in out Object) return Robot.Trajectory.Object is
+   function Is_On_Departure(Safe_Trajectory: in Object) return Boolean is
    begin
-      return Sf_Trj.Trj;
-   end Get_Trajectory;
+      return Safe_Trajectory.On_Departure;
+   end Is_On_Departure;
 
+   function Get_Trajectory(Safe_Trajectory: in out Object) return Robot.Trajectory.Object is
+   begin
+      return Safe_Trajectory.Trajectory_Object;
+   end Get_Trajectory;
 
 end Robot.Trajectory.Safe;
