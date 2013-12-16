@@ -23,12 +23,16 @@ package body Parking is
             end if;
          end loop;
 
+         Occupied_Park_Place(Id) := False;
+
          Site.Safely.Hide_Robot_Park(Place  => Id,
                                      Radius => Robot.Radius);
       end Take;
 
       procedure Park(Id: in Robot.Robot_Id) is
       begin
+         Occupied_Park_Place(Id) := True;
+
          Site.Safely.Draw_Robot_Park(Place  => Id,
                                      Radius => Robot.Radius);
       end Park;

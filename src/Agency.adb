@@ -1,4 +1,5 @@
 with Robot;
+with Ada.Text_IO;
 
 package body Agency is
 
@@ -19,12 +20,16 @@ package body Agency is
    end Shutdown;
 
    task body Mission_Listener is
+      Id: Robot.Robot_Id;
    begin
       select
          Cancel.Wait;
       then abort
-         null;
-       end select;
+         Listener.Get(Id);
+         Agency_Parking.Park(Id);
+         Ada.Text_IO.Put_Line("Listener.Get & Park");
+      end select;
+       Ada.Text_IO.Put_Line("Mission_Listener task ended");
    end Mission_Listener;
 
 

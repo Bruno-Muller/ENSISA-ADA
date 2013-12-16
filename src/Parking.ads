@@ -15,6 +15,6 @@ private
    Robot_Id_Generator: Robot_Id_Randomizer.Generator;
 
    type Parking_Robot_Table is array(Robot.Robot_Id) of Boolean;
-   Occupied_Park_Place: Parking_Robot_Table := (others => False);
+   Occupied_Park_Place: Parking_Robot_Table := (others => True);
 
 end Parking;
