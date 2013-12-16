@@ -14,17 +14,19 @@ procedure Main is
 
 begin
 
-
    for I in 1..10 loop
 
-      -- todo chemin interessant
-      Ada.Text_IO.Put("loop...");
+      -- todo chemin interessant & remettre le truc temporisé sur les missions ?
+      Ada.Text_IO.Put_Line("loop");
       Randomized_Input := Place_Randomizer.Random_Input;
       Randomized_Output := Place_Randomizer.Random_Output;
 
       Agency.Handle_Transfer(Randomized_Input, Randomized_Output);
 
-      Ada.Text_IO.Put_Line("end");
+
+
+
+      Ada.Text_IO.Put_Line("end loop");
 
    end loop ;
 

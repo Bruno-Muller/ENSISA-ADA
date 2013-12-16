@@ -93,6 +93,12 @@ package body Site is
                          Y => Ctr.Y + R * Sin(Angle/180.0*3.14159265));
    end Get_Point;
 
+   function Get_Parking_Point(Place: in Natural; Radius: in Float) return Path.Point is
+   begin
+      return Path.Point'(X => 30.0,
+                         Y => 30.0 + Radius * 3.0);
+   end Get_Parking_Point;
+
    function Robot_Intersects(Place: Place_Names; X: Float; Y: Float) return Boolean is
       Pnt: Path.Point := Get_Point(Pnt => Place);
    begin
@@ -141,6 +147,13 @@ package body Site is
                                Y2 => Integer(Som2.Y),
                                Hue => Clr);
          end loop;
+
+         Adagraph.Draw_Line(X1 => Integer(Som1.X),
+                            Y1 => Integer(Som1.Y),
+                            X2 => Integer(Som2.X),
+                            Y2 => Integer(Som2.Y),
+                            Hue => Clr);
+
       end Draw_Site;
 
       procedure Draw_Path(Pth: in Path.Object; Clr: in Color_Type := Light_Green) is
@@ -191,8 +204,9 @@ package body Site is
       end Hide_Robot;
 
       procedure Draw_Robot_Park(Place: in Natural; Radius: in Float; Clr: in Color_Type := Light_Green) is
+      	 Pnt: Path.Point := Get_Parking_Point(Place, Radius);
       begin
-         Draw_Robot(Pnt          => Path.Point'(X => 20.0, Y => 20.0 + Float(Place) * 1.5 * Radius),
+         Draw_Robot(Pnt          => Pnt,
                     Radius       => Radius,
                     Direction    => Path.Vector'(X => 0.0, Y => 0.0),
                     Mouth_Opened => True,
@@ -200,19 +214,20 @@ package body Site is
       end Draw_Robot_Park;
 
       procedure Hide_Robot_Park(Place: in Natural; Radius: in Float) is
+         Pnt: Path.Point := Get_Parking_Point(Place, Radius);
       begin
-         Hide_Robot(Pnt    => Path.Point'(X => 20.0, Y => 20.0 + Float(Place) * 1.5 * Radius),
+         Hide_Robot(Pnt    => Pnt,
                     Radius => Radius);
       end Hide_Robot_Park;
 
 
    end Safely;
 
-   begin
-      Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);
-      Adagraph.Set_Window_Title("Chevalier - Muller"); --"PACMAN");
-      Adagraph.Clear_Window;
+begin
+   Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);
+   Adagraph.Set_Window_Title("Chevalier - Muller"); --"PACMAN");
+   Adagraph.Clear_Window;
 
-      Site.Safely.Draw_Site;
+   Site.Safely.Draw_Site;
 
-   end Site;
+end Site;
