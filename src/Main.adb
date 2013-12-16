@@ -49,14 +49,14 @@ begin
 
    My_Robot_Table(3).Go(From => Site.I1 , To   => Site.O2 );
 
-   for I in 1..My_Robot_Table'Length loop
+   for I in My_Robot_Table'First..My_Robot_Table'Last loop
       Randomized_Input := Place_Randomizer.Random_Input;
       Randomized_Output := Place_Randomizer.Random_Output;
       select
          My_Robot_Table(I).Go(From => Randomized_Input , To   => Randomized_Output );
       or
          delay 3.5;
-         if I=My_Robot_Table'Length then
+         if I=My_Robot_Table'Last then
             My_Robot_Table(1).Go(From => Randomized_Input, To   => Randomized_Output);
          else
             My_Robot_Table(I+1).Go(From => Randomized_Input, To   => Randomized_Output);
@@ -66,9 +66,9 @@ begin
 
 
 
-   for I in 1..My_Robot_Table'Length loop
-      My_Robot_Table(I).Shutdown;
-   end loop ;
+      for I in My_Robot_Table'First..My_Robot_Table'Last loop
+         My_Robot_Table(I).Shutdown;
+      end loop ;
 
    Adagraph.Destroy_Graph_Window;
 

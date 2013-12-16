@@ -11,7 +11,7 @@ package body Agency is
 
    procedure Shutdown is
    begin
-      for I in 1..Agency_Robot_Table'Length loop
+      for I in Agency_Robot_Table'First..Agency_Robot_Table'Last loop
          Agency_Robot_Table(I).Shutdown;
       end loop ;
    end Shutdown;
