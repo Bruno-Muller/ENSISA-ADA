@@ -1,6 +1,5 @@
 with Robot.Trajectory;
 with Robot.Trajectory.Safe;
-with Ada.Text_IO;
 
 package body Robot is
 
@@ -68,9 +67,9 @@ package body Robot is
                Trajectory.Safe.Close(Safe_Trajectory => Its_Trajectory);
 
                State := Ready;
-               Ada.Text_IO.Put_Line("Robot put");
-               Mission_Done.Put(Id);
-
+               if Mission_Done/=null then
+                  Mission_Done.Put(Id);
+               end if;
          or
             when State=Ready => accept Shutdown do
                   State:=Shutdown;
