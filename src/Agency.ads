@@ -8,6 +8,17 @@ package Agency is
    procedure Handle_Transfer(From: Site.Input_Places; To: Site.Output_Places);
    procedure Shutdown;
 
+   task Mission_Listener is
+
+   end Mission_Listener;
+
+   protected type Cancel is
+      entry Wait;
+      procedure Signal;
+   private
+      Canceled: Boolean := False;
+   end Cancel;
+
 private
 
    type Robot_Table is array(Robot.Robot_Id) of access Robot.Object;
@@ -19,5 +30,6 @@ private
                                        new Robot.Object(4, null, Adagraph.Cyan),
                                        new Robot.Object(5, null, Adagraph.Magenta),
                                        new Robot.Object(6, null, Adagraph.Yellow));
+   Signal: Cancel;
 
 end Agency;
