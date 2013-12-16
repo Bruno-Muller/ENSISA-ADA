@@ -183,19 +183,19 @@ package body Site is
       end Draw_Path;
 
       procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector := Path.Vector'(1.0, 0.0); Mouth_Opened: in Boolean := False; Clr: in Color_Type := Adagraph.White) is
-         Theta: Float;
+         --Theta: Float;
       begin
          Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Clr, Filled => Fill);
-                  if Mouth_Opened then
-                     for I in -10..10 loop
-                        Theta := Float(I*3)/180.0*3.14159265;
-                        Draw_Line(X1 => Integer(Pnt.X),
-                                  Y1 => Integer(Pnt.Y),
-                                  X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
-                                  Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
-                                  Hue => Black);
-                     end loop;
-                  end if;
+--                    if Mouth_Opened then
+--                       for I in -10..10 loop
+--                          Theta := Float(I*3)/180.0*3.14159265;
+--                          Draw_Line(X1 => Integer(Pnt.X),
+--                                    Y1 => Integer(Pnt.Y),
+--                                    X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
+--                                    Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
+--                                    Hue => Black);
+--                       end loop;
+--                    end if;
       end Draw_Robot;
 
       procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float) is
