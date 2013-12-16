@@ -32,5 +32,7 @@ package Site is
       procedure Draw_Path (Pth: in Path.Object; Clr: in Color_Type := Light_Green) ;
       procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector; Mouth_Opened: in Boolean; Clr: in Color_Type);
       procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float);
+      procedure Draw_Robot_Park(Place: in Natural; Radius: in Float; Clr: in Color_Type := Light_Green);
+      procedure Hide_Robot_Park(Place: in Natural; Radius: in Float);
    end;
 end Site;

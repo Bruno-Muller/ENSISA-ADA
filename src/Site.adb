@@ -173,16 +173,16 @@ package body Site is
          --Theta: Float;
       begin
          Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Clr, Filled => Fill);
---           if Mouth_Opened then
---              for I in -10..10 loop
---                 Theta := Float(I*3)/180.0*3.14159265;
---                 Draw_Line(X1 => Integer(Pnt.X),
---                           Y1 => Integer(Pnt.Y),
---                           X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
---                           Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
---                           Hue => Black);
---              end loop;
---           end if;
+         --           if Mouth_Opened then
+         --              for I in -10..10 loop
+         --                 Theta := Float(I*3)/180.0*3.14159265;
+         --                 Draw_Line(X1 => Integer(Pnt.X),
+         --                           Y1 => Integer(Pnt.Y),
+         --                           X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
+         --                           Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
+         --                           Hue => Black);
+         --              end loop;
+         --           end if;
       end Draw_Robot;
 
       procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float) is
@@ -190,13 +190,29 @@ package body Site is
          Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Black, Filled => Fill);
       end Hide_Robot;
 
+      procedure Draw_Robot_Park(Place: in Natural; Radius: in Float; Clr: in Color_Type := Light_Green) is
+      begin
+         Draw_Robot(Pnt          => Path.Point'(X => 20.0, Y => 20.0 + Float(Place) * 1.5 * Radius),
+                    Radius       => Radius,
+                    Direction    => Path.Vector'(X => 0.0, Y => 0.0),
+                    Mouth_Opened => True,
+                    Clr          => Clr);
+      end Draw_Robot_Park;
+
+      procedure Hide_Robot_Park(Place: in Natural; Radius: in Float) is
+      begin
+         Hide_Robot(Pnt    => Path.Point'(X => 20.0, Y => 20.0 + Float(Place) * 1.5 * Radius),
+                    Radius => Radius);
+      end Hide_Robot_Park;
+
+
    end Safely;
 
-begin
-   Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);
-   Adagraph.Set_Window_Title("Chevalier - Muller"); --"PACMAN");
-   Adagraph.Clear_Window;
+   begin
+      Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);
+      Adagraph.Set_Window_Title("Chevalier - Muller"); --"PACMAN");
+      Adagraph.Clear_Window;
 
-   Site.Safely.Draw_Site;
+      Site.Safely.Draw_Site;
 
-end Site;
+   end Site;

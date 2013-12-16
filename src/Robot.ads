@@ -16,6 +16,6 @@ package Robot is
       entry Shutdown;
    end Object;
 
-private
    Radius: constant Float := 16.0;
+
 end Robot;
