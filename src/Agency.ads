@@ -12,12 +12,12 @@ package Agency is
 
    end Mission_Listener;
 
-   protected type Cancel is
+   protected type Signal is
       entry Wait;
       procedure Signal;
    private
-      Canceled: Boolean := False;
-   end Cancel;
+      Arrived: Boolean := False;
+   end Signal;
 
 private
 
@@ -30,6 +30,6 @@ private
                                        new Robot.Object(4, null, Adagraph.Cyan),
                                        new Robot.Object(5, null, Adagraph.Magenta),
                                        new Robot.Object(6, null, Adagraph.Yellow));
-   Signal: Cancel;
+   Cancel: Signal;
 
 end Agency;

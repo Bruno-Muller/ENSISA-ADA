@@ -15,28 +15,32 @@ package body Agency is
          Agency_Robot_Table(I).Shutdown;
       end loop ;
 
-      Signal.Signal;
+      Cancel.Signal;
    end Shutdown;
 
    task body Mission_Listener is
    begin
-      null;
+      select
+         Cancel.Wait;
+      then abort
+         null;
+       end select;
    end Mission_Listener;
 
 
-   protected body Cancel is
+   protected body Signal is
 
       procedure Signal is
       begin
-         Canceled:= True;
+         Arrived:= True;
       end Signal;
 
-      entry Wait when Canceled is
+      entry Wait when Arrived is
       begin
-         Canceled := False;
+         Arrived := False;
       end Wait;
 
-   end Cancel;
+   end Signal;
 
 
 end Agency;
