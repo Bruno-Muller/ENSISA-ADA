@@ -96,7 +96,7 @@ package body Site is
    function Get_Parking_Point(Place: in Natural; Radius: in Float) return Path.Point is
    begin
       return Path.Point'(X => 30.0,
-                         Y => 30.0 + Radius * 3.0);
+                         Y => 30.0 + Float(Place) * Radius * 3.0);
    end Get_Parking_Point;
 
    function Robot_Intersects(Place: Place_Names; X: Float; Y: Float) return Boolean is
@@ -182,20 +182,20 @@ package body Site is
          end loop;
       end Draw_Path;
 
-      procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector; Mouth_Opened: in Boolean; Clr: in Color_Type) is
-         --Theta: Float;
+      procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector := Path.Vector'(1.0, 0.0); Mouth_Opened: in Boolean := False; Clr: in Color_Type := Adagraph.White) is
+         Theta: Float;
       begin
          Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Clr, Filled => Fill);
-         --           if Mouth_Opened then
-         --              for I in -10..10 loop
-         --                 Theta := Float(I*3)/180.0*3.14159265;
-         --                 Draw_Line(X1 => Integer(Pnt.X),
-         --                           Y1 => Integer(Pnt.Y),
-         --                           X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
-         --                           Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
-         --                           Hue => Black);
-         --              end loop;
-         --           end if;
+                  if Mouth_Opened then
+                     for I in -10..10 loop
+                        Theta := Float(I*3)/180.0*3.14159265;
+                        Draw_Line(X1 => Integer(Pnt.X),
+                                  Y1 => Integer(Pnt.Y),
+                                  X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
+                                  Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
+                                  Hue => Black);
+                     end loop;
+                  end if;
       end Draw_Robot;
 
       procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float) is
@@ -204,13 +204,12 @@ package body Site is
       end Hide_Robot;
 
       procedure Draw_Robot_Park(Place: in Natural; Radius: in Float; Clr: in Color_Type := Light_Green) is
-      	 Pnt: Path.Point := Get_Parking_Point(Place, Radius);
+         Pnt: Path.Point := Get_Parking_Point(Place, Radius);
       begin
          Draw_Robot(Pnt          => Pnt,
                     Radius       => Radius,
-                    Direction    => Path.Vector'(X => 0.0, Y => 0.0),
                     Mouth_Opened => True,
-                    Clr          => Clr);
+                    Clr => Clr);
       end Draw_Robot_Park;
 
       procedure Hide_Robot_Park(Place: in Natural; Radius: in Float) is
@@ -220,6 +219,26 @@ package body Site is
                     Radius => Radius);
       end Hide_Robot_Park;
 
+      procedure Draw_Robot_Park_Place(Place: in Natural; Radius: in Float) is
+         Pnt: Path.Point := Get_Parking_Point(Place, Radius);
+      begin
+         Adagraph.Draw_Box(X1 => Integer(Pnt.X - 1.5*Radius),
+                           Y1 => Integer(Pnt.Y - 1.5*Radius),
+                           X2  => Integer(Pnt.X + 1.5*Radius),
+                           Y2  => Integer(Pnt.Y + 1.5*Radius),
+                           Hue => Dark_Gray);
+
+         Adagraph.Draw_Line(X1 => Integer(Pnt.X + 1.5*Radius),
+                            Y1 => Integer(Pnt.Y - 1.5*Radius),
+                            X2  => Integer(Pnt.X + 1.5*Radius),
+                            Y2  => Integer(Pnt.Y + 1.5*Radius),
+                            Hue => Black);
+
+         Adagraph.Display_Text(X    => Integer(Pnt.X - 1.5*Radius-9.0),
+                               Y    => Integer(Pnt.Y + 1.5*Radius-1.0),
+                               Text => Integer'Image(Place),
+                               Hue  => Dark_Gray);
+      end Draw_Robot_Park_Place;
 
    end Safely;
 

@@ -9,9 +9,9 @@ package Site is
    Radius: Float := 200.0;
 
    type Place_Names is (I1, I2, I3, I4, I5, I6,
-                         R1, R2, R3, R4, R5, R6,
-                         O1, O2, O3, O4, O5, O6,
-                         C);
+                        R1, R2, R3, R4, R5, R6,
+                        O1, O2, O3, O4, O5, O6,
+                        C);
    subtype Ring_Places is Place_Names range R1..R6;
    subtype Input_Places is Place_Names range I1..I6;
    subtype Output_Places is Place_Names range O1..O6;
@@ -31,9 +31,10 @@ package Site is
    protected Safely is
       procedure Draw_Site(Clr: in Color_Type := Dark_Gray);
       procedure Draw_Path (Pth: in Path.Object; Clr: in Color_Type := Light_Green) ;
-      procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector; Mouth_Opened: in Boolean; Clr: in Color_Type);
+      procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector := Path.Vector'(1.0, 0.0); Mouth_Opened: in Boolean := False; Clr: in Color_Type := Adagraph.White);
       procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float);
       procedure Draw_Robot_Park(Place: in Natural; Radius: in Float; Clr: in Color_Type := Light_Green);
       procedure Hide_Robot_Park(Place: in Natural; Radius: in Float);
+      procedure Draw_Robot_Park_Place(Place: in Natural; Radius: in Float);
    end;
 end Site;

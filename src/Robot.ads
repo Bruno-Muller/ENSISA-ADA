@@ -17,5 +17,6 @@ package Robot is
    end Object;
 
    Radius: constant Float := 16.0;
+   Robot_Color: array (Robot_Id)  of Adagraph.Color_Type := (Adagraph.Green, Adagraph.Blue, Adagraph.Red, Adagraph.Cyan, Adagraph.Magenta, Adagraph.Yellow);
 
 end Robot;
