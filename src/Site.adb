@@ -161,41 +161,36 @@ package body Site is
          Number_Of_Cookies: Integer := 0;
       begin
          for I in 1..Path.Segment_Count(Pth) loop
-            Adagraph.Draw_Line(X1  => Integer(Path.X(Path => Pth, Segment => I, K => 0.0)),
-                               Y1  => Integer(Path.Y(Path => Pth, Segment => I, K => 0.0)),
-                               X2  => Integer(Path.X(Path => Pth, Segment => I, K => 1.0)),
-                               Y2  => Integer(Path.Y(Path => Pth, Segment => I, K => 1.0)),
-                               Hue => Clr);
-            --              Number_Of_Cookies := Integer(Path.Segment_Length(Path => Pth, Segment => I) / 14.0);
-            --              for Cookie in 0..Number_Of_Cookies loop
-            --                 Pnt := Path.XY(Path => Pth,
-            --                                Segment => I,
-            --                                K => (Float(Cookie)/Float(Number_Of_Cookies)));
-            --
-            --                 Adagraph.Draw_Box(X1 => Integer(Pnt.X-2.0),
-            --                                   Y1 => Integer(Pnt.Y-2.0),
-            --                                   X2 => Integer(Pnt.X+2.0),
-            --                                   Y2 => Integer(Pnt.Y+2.0),
-            --                                   Hue => Clr,
-            --                                   Filled => Fill);
-            --            end loop;
+            Number_Of_Cookies := Integer(Path.Segment_Length(Path => Pth, Segment => I) / 14.0);
+            for Cookie in 0..Number_Of_Cookies loop
+               Pnt := Path.XY(Path => Pth,
+                              Segment => I,
+                              K => (Float(Cookie)/Float(Number_Of_Cookies)));
+
+               Adagraph.Draw_Box(X1 => Integer(Pnt.X-2.0),
+                                 Y1 => Integer(Pnt.Y-2.0),
+                                 X2 => Integer(Pnt.X+2.0),
+                                 Y2 => Integer(Pnt.Y+2.0),
+                                 Hue => Clr,
+                                 Filled => Fill);
+            end loop;
          end loop;
       end Draw_Path;
 
       procedure Draw_Robot(Pnt: in Path.Point; Radius: in Float; Direction: in Path.Vector := Path.Vector'(1.0, 0.0); Mouth_Opened: in Boolean := False; Clr: in Color_Type := Adagraph.White) is
-         --Theta: Float;
+         Theta: Float;
       begin
          Adagraph.Draw_Circle(X => Integer(Pnt.X), Y => Integer(Pnt.Y), Radius => Integer(Radius), Hue => Clr, Filled => Fill);
---                    if Mouth_Opened then
---                       for I in -10..10 loop
---                          Theta := Float(I*3)/180.0*3.14159265;
---                          Draw_Line(X1 => Integer(Pnt.X),
---                                    Y1 => Integer(Pnt.Y),
---                                    X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
---                                    Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
---                                    Hue => Black);
---                       end loop;
---                    end if;
+         if Mouth_Opened then
+            for I in -10..10 loop
+               Theta := Float(I*3)/180.0*3.14159265;
+               Draw_Line(X1 => Integer(Pnt.X),
+                         Y1 => Integer(Pnt.Y),
+                         X2 => Integer(Pnt.X + Radius * (Direction.X * Cos(Theta) - Direction.Y * Sin(Theta))),
+                         Y2 => Integer(Pnt.Y + Radius * (Direction.X * Sin(Theta) + Direction.Y * Cos(Theta))),
+                         Hue => Black);
+            end loop;
+         end if;
       end Draw_Robot;
 
       procedure Hide_Robot(Pnt: in Path.Point; Radius: in Float) is
@@ -244,7 +239,7 @@ package body Site is
 
 begin
    Adagraph.Create_Sized_Graph_Window(800, 600, X_max, Y_Max, X_Char, Y_Char);
-   Adagraph.Set_Window_Title("Chevalier - Muller"); --"PACMAN");
+   Adagraph.Set_Window_Title("PACMAN");
    Adagraph.Clear_Window;
 
    Site.Safely.Draw_Site;
