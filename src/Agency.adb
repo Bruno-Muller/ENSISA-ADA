@@ -1,12 +1,15 @@
 with Robot;
+with Site;
 
 package body Agency is
 
    procedure Handle_Transfer(From: Site.Input_Places; To: Site.Output_Places) is
       Id: Robot.Robot_Id;
    begin
+
       Agency_Parking.Take(Id);
       Agency_Robot_Table(Id).Go(From => From, To   => To);
+      Site.Safely.Hide_Robot_Park(Place  => Id, Radius => Robot.Radius);
    end Handle_Transfer;
 
    procedure Shutdown is

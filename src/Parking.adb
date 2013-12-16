@@ -1,6 +1,6 @@
-with Site;
 with Robot;
 with Ada.Numerics.Discrete_Random;
+with Site;
 
 package body Parking is
 
@@ -24,8 +24,8 @@ package body Parking is
 
          Occupied_Park_Place(Id) := False;
 
-         Site.Safely.Hide_Robot_Park(Place  => Id,
-                                     Radius => Robot.Radius);
+         --Site.Safely.Hide_Robot_Park(Place  => Id, Radius => Robot.Radius); Can't do it here
+
       end Take;
 
       procedure Park(Id: in Robot.Robot_Id) is
