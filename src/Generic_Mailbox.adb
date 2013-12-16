@@ -1,17 +1,30 @@
 package body Generic_Mailbox is
 
-   protected body Mailbox is
+   protected body Object is
 
-      procedure Put(Id: in Resource_Id) is
+      Procedure Shift (I: in out Positive) is
       begin
-         null;
+         if I=Size then
+            I:= 1;
+         else
+            I:= I + 1;
+         end if;
+      end Shift;
+
+      entry Put(Msg: in Message) when Count/=Size is
+      begin
+         Shift(Last);
+         Content(Last) := Msg;
+         Count := Count + 1;
       end Put;
 
-      procedure Get(Id: out Resource_Id) is
+      entry Get(Msg: out Message) when Count>0 is
       begin
-         null;
+         Msg := Content(First);
+         Shift(First);
+         Count := Count - 1;
       end Get;
 
-   end Mailbox;
+   end Object;
 
 end Generic_Mailbox;

@@ -68,9 +68,8 @@ package body Robot is
 
                State := Ready;
 
-               if Mission_Done/=null then
-                  Mission_Done.Put(Id);
-               end if;
+               Mission_Done.Put(Id);
+
          or
             when State=Ready => accept Shutdown do
                   State:=Shutdown;
