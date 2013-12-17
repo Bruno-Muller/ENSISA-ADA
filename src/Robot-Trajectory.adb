@@ -9,6 +9,7 @@ package body Robot.Trajectory is
    end Route;
 
    procedure Open(Trajectory_Object: in out Object; From: Site.Input_Places; To: Site.Output_Places; Speed: in Float) is
+      -- Places_Path.Values contient l'algo pathfinder qui retourne les places permettant de se déplacer de From vers To suivant la règle établie dans le sujet de projet
       Pth : Site.Places_Path.Places := Site.Places_Path.Values(Site.Places_Path.Open(From => From, To => To));
    begin
       Trajectory_Object.Route := Path.Null_Path;
@@ -17,6 +18,7 @@ package body Robot.Trajectory is
       Trajectory_Object.K := 0.0;
       Trajectory_Object.Speed := Speed;
 
+      -- On transforme la liste de place, en liste de Point X,Y
       for P in Pth'First..Pth'Last loop
          Path.Add(Trajectory_Object.Route, Site.Get_Point(Pth(P)));
       end loop;
@@ -43,6 +45,7 @@ package body Robot.Trajectory is
                          Y => Trajectory.Y(Trajectory_Object));
    end XY;
 
+   -- récupère la direction du robot, utile pour tracer la bouche de Pacman dans son sens de déplacement
    function Direction(Trajectory_Object: in Object) return Path.Vector is
       X1: Float := Path.X(Path => Trajectory_Object.Route, Segment => Trajectory_Object.Segment, K => 0.0);
       X2: Float := Path.X(Path => Trajectory_Object.Route, Segment => Trajectory_Object.Segment, K => 1.0);

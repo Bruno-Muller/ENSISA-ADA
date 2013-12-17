@@ -9,6 +9,8 @@ package Robot.Trajectory is
    function X(Trajectory_Object: in Object) return Float;
    function Y(Trajectory_Object: in Object) return Float;
    function XY(Trajectory_Object : in Object) return Path.Point;
+
+   -- récupère la direction du robot, utile pour tracer la bouche de Pacman dans son sens de déplacement
    function Direction(Trajectory_Object: in Object) return Path.Vector;
 
    procedure Next(Trajectory_Object: in out Object; DeltaT: in Float);
