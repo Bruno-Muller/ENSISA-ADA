@@ -4,10 +4,13 @@ package Path is
 
    Null_Path: constant Object;
 
+   -- Représente une coordonnée
    type Point is record
       X, Y : Float := 0.0;
    end record;
 
+   -- Réprésente le vecteur utilisé pour la direction du robot sur la path
+   -- utile pour tracer la bouche du Pacman dans son sens de déplacement
    type Vector is record
       X, Y: Float :=0.0;
    end record;
