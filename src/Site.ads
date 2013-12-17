@@ -22,8 +22,15 @@ package Site is
    function Next(Place: Ring_Places) return Ring_Places;
    function Previous(Place: Ring_Places) return Ring_Places;
    function Opposite(Place: Ring_Places) return Ring_Places;
+
+   -- retourne la position Point(X,Y) d'une place
    function Get_Point(Pnt: Place_Names) return Path.Point;
+
+   -- retourne la position d'un point situé un cercle d'un certain rayon par rapport à un certain angle
+   -- utile pour trouver les places et tracer le site
    function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point;
+
+   -- retourn la position Point(X,Y) d'une pace de parking
    function Get_Parking_Point(Place: in Natural; Radius: in Float) return Path.Point;
 
    function Robot_Intersects(Place: Place_Names; X: Float; Y: Float) return Boolean;

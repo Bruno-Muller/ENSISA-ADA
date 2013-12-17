@@ -60,6 +60,7 @@ package body Site is
       end case;
    end Opposite;
 
+   -- retourne la position Point(X,Y) d'une place
    function Get_Point(Pnt: Place_Names) return Path.Point is
    begin
       case Pnt is
@@ -87,12 +88,15 @@ package body Site is
       end case;
    end Get_Point;
 
+   -- retourne la position d'un point situé un cercle d'un certain rayon par rapport à un certain angle
+   -- utile pour trouver les places et tracer le site
    function Get_Point(Ctr: Path.Point; R: Float; Angle: Float) return Path.Point is
    begin
       return Path.Point'(X => Ctr.X + R * Cos(Angle/180.0*3.14159265),
                          Y => Ctr.Y + R * Sin(Angle/180.0*3.14159265));
    end Get_Point;
 
+   -- retourn la position Point(X,Y) d'une pace de parking
    function Get_Parking_Point(Place: in Natural; Radius: in Float) return Path.Point is
    begin
       return Path.Point'(X => 30.0,
@@ -115,14 +119,15 @@ package body Site is
       begin
 
          for I in 0..6 loop
-            PolyA := Get_Point(Center, Radius, Float(I*60-30));
-            PolyB := Get_Point(Center, Radius, Float(I*60+30));
-            Tri1 := Get_Point(Center, 40.0, Float(I*60));
-            Tri2 := Get_Point(PolyA, 40.0, Float(I*60)+120.0);
-            Tri3 := Get_Point(PolyB, 40.0, Float(I*60)+240.0);
-            Som1 := Get_Point(PolyA, 40.0, Float(I*60)+60.0);
-            Som2 := Get_Point(PolyB, 40.0, Float(I*60)+300.0);
+            PolyA := Get_Point(Center, Radius, Float(I*60-30)); -- (I)ièm sommet de l'hexagone : la (I)ième place
+            PolyB := Get_Point(Center, Radius, Float(I*60+30)); -- (I+1)ièm sommet de l'hexagone : la (I+1)ième place
+            Tri1 := Get_Point(Center, 40.0, Float(I*60)); 	-- sommet 1 du triangle par rapport au centre
+            Tri2 := Get_Point(PolyA, 40.0, Float(I*60)+120.0); 	-- sommet 2 du trianle par raport à la (I)ième place
+            Tri3 := Get_Point(PolyB, 40.0, Float(I*60)+240.0); 	-- sommet 3 du triangle par rapport à la (I+1)ième place
+            Som1 := Get_Point(PolyA, 40.0, Float(I*60)+60.0);	-- sommet 1 du segment externe par raport à la (I)ième place
+            Som2 := Get_Point(PolyB, 40.0, Float(I*60)+300.0); 	-- sommet 2 du segment externe par raport à la (I+1)ième place
 
+            -- Trace le trigangle
             Adagraph.Draw_Line(X1 => Integer(Tri1.X),
                                Y1 => Integer(Tri1.Y),
                                X2 => Integer(Tri2.X),
@@ -141,18 +146,14 @@ package body Site is
                                X2 => Integer(Tri3.X),
                                Y2 => Integer(Tri3.Y),
                                Hue => Clr);
+
+            -- Trace le segment
             Adagraph.Draw_Line(X1 => Integer(Som1.X),
                                Y1 => Integer(Som1.Y),
                                X2 => Integer(Som2.X),
                                Y2 => Integer(Som2.Y),
                                Hue => Clr);
          end loop;
-
-         Adagraph.Draw_Line(X1 => Integer(Som1.X),
-                            Y1 => Integer(Som1.Y),
-                            X2 => Integer(Som2.X),
-                            Y2 => Integer(Som2.Y),
-                            Hue => Clr);
 
       end Draw_Site;
 
