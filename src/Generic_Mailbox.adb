@@ -1,8 +1,9 @@
 package body Generic_Mailbox is
 
+   -- l'objet protégé représentant une mailbox générique contenant des messages (cf cours)
    protected body Object is
 
-      Procedure Shift (I: in out Positive) is
+      Procedure Shift (I: in out Positive) is -- SP privé (cf Cours)
       begin
          if I=Size then
             I:= 1;
@@ -11,6 +12,7 @@ package body Generic_Mailbox is
          end if;
       end Shift;
 
+      -- ajoute un message, bloque si la mailbox est pleine
       entry Put(Msg: in Message) when Count/=Size is
       begin
          Shift(Last);
@@ -18,6 +20,7 @@ package body Generic_Mailbox is
          Count := Count + 1;
       end Put;
 
+      -- récupère un message, bloqe si la mailbox est vide
       entry Get(Msg: out Message) when Count>0 is
       begin
          Msg := Content(First);
