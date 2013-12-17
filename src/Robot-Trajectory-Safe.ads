@@ -23,7 +23,7 @@ package Robot.Trajectory.Safe is
 
 private
 
-   -- Même principe que le path sauf qu'on ne stocke pas des points X, Y mais des places
+   -- la safe trajectory contient la trajectory + des informations supplémentaires
    type Object is tagged record
       From:  Site.Input_Places;
       To: Site.Output_Places;
