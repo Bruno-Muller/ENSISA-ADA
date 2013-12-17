@@ -1,5 +1,6 @@
 package body Site.Places_Path is
 
+   -- Algorithme pathfinder de From vers To selon les règles données par le sujet du projet
    function Open(From: in Site.Input_Places; To: Site.Output_Places) return Places_Path.Object is
       Path: Places_Path.Object := Null_Places_Path;
    begin
@@ -7,10 +8,13 @@ package body Site.Places_Path is
       Add(Path, Site.Way_In(From => From));
 
       if Site.Opposite(Site.Way_In(From => From))=Site.Way_Out(To => To) then
+         -- cas de la place opposée: ajoute le centre
          Add(Path, Site.C);
       elsif Site.Next(Site.Next(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
+         -- cas du next + 1 : ajoute next
          Add(Path, Site.Next(Site.Way_In(From => From)));
       elsif Site.Previous(Site.Previous(Site.Way_In(From => From)))=Site.Way_Out(To => To) then
+         -- cas du previous - 1 : ajoute previous
          Add(Path, Site.Previous(Site.Way_In(From => From)));
       end if;
 
